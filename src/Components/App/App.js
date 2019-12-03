@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.scss';
 import Nav from '../Nav/Nav.js';
 import Login from '../Login/Login.js';
@@ -8,18 +8,30 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-
+      isLoggedIn: false,
+      userInfo: {}
     }
+  }
+
+  handleLogin = () => {
+    this.setState({ isLoggedIn: true })
+  }
+
+  handleUserInfo = (info) => {
+    this.setState({ userInfo: info })
   }
 
   render() {
     return (
-      <body>
+      <div>
         <Nav />
         <main>
-          <Login />
+          <Login
+            handleLogin={this.handleLogin}
+            handleUserInfo={this.handleUserInfo}
+          />
         </main>
-      </body>
+      </div>
     );
   }
 }
