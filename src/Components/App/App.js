@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.scss';
-import Nav from '../Nav/Nav.js'
+import Nav from '../Nav/Nav.js';
+import Login from '../Login/Login.js';
 
 
 class App extends Component {
@@ -15,6 +16,9 @@ class App extends Component {
     return (
       <body>
         <Nav />
+        <main>
+          <Login />
+        </main>
       </body>
     );
   }
