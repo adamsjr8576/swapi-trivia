@@ -1,11 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import './App.scss';
+import Nav from '../Nav/Nav.js'
 
-function App() {
-  return (
 
-  );
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+
+    }
+  }
+
+  render() {
+    return (
+      <body>
+        <Nav />
+      </body>
+    );
+  }
 }
 
 export default App;
