@@ -35,32 +35,36 @@ class Login extends Component {
       return (
         <form className='form-login'>
           <h2>Please Login</h2>
-          <input
-            type='text'
-            name='name'
-            value={this.state.name}
-            placeholder='Name'
-            className='input-login'
-            onChange={ (e) => this.handleChange(e) }
-          />
-          <input
-            type='text'
-            name='quote'
-            value={this.state.quote}
-            placeholder='Favorite StarWars Quote'
-            className='input-login'
-            onChange={ (e) => this.handleChange(e) }
-          />
-          <select
-            value={this.state.skillLevel}
-            name="skillLevel"
-            className='input-login'
-            onChange={ (e) => this.handleChange(e) }
-          >
-            <option value='Youngling'>Youngling</option>
-            <option value='Padawan'>Padawan</option>
-            <option value='Jedi Master'>Jedi Master</option>
-          </select>
+            <input
+              type='text'
+              name='name'
+              value={this.state.name}
+              placeholder='Enter Name'
+              className='input-login'
+              onChange={ (e) => this.handleChange(e) }
+            />
+            <input
+              type='text'
+              name='quote'
+              value={this.state.quote}
+              placeholder='Enter Favorite StarWars Quote'
+              className='input-login'
+              onChange={ (e) => this.handleChange(e) }
+            />
+          <div className='input-container'>
+            <label for="skill">Select:</label>
+            <select
+              id='skill'
+              value={this.state.skillLevel}
+              name='skillLevel'
+              className='input-select'
+              onChange={ (e) => this.handleChange(e) }
+            >
+              <option value='Youngling'>Youngling</option>
+              <option value='Padawan'>Padawan</option>
+              <option value='Jedi Master'>Jedi Master</option>
+            </select>
+          </div>
           {this.state.hasError && <p className='error-message'>Please Fill out all forms</p>}
           <button className='btn-login' type='button' onClick={ () => this.submitLoginHandler() }>Login</button>
         </form>

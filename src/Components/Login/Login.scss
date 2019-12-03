@@ -48,3 +48,24 @@ h2 {
   font-weight: bold;
   margin: 0;
 }
+
+.input-select {
+  width: 100%;
+  font-size: 1em;
+  height: 35px;
+  border-radius: 10px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%
+}
+
+label {
+  color: white;
+  margin-bottom: 5px;
+}
