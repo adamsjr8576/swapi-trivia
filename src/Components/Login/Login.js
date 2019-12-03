@@ -3,14 +3,14 @@ import './Login.scss';
 
 class Login extends Component {
   constructor(props) {
-    super(props) 
+    super(props)
     this.state = {
       name: '',
       quote: '',
       skillLevel: ''
     }
   }
-  
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
@@ -23,6 +23,7 @@ class Login extends Component {
   render() {
     return(
       <form className='form-login'>
+        <h2>Please Login</h2>
         <input
           type='text'
           name='name'
@@ -44,6 +45,8 @@ class Login extends Component {
           name='skillLevel'
           list='skill'
           value={this.state.skillLevel}
+          placeholder="Select Skill Level..."
+          className='input-login'
           onChange={ (e) => this.handleChange(e) }
         />
           <datalist id='skill'>
