@@ -7,7 +7,7 @@ class Login extends Component {
     this.state = {
       name: '',
       quote: '',
-      skillLevel: '',
+      skillLevel: 'Youngling',
       hasError: false
     }
   }
@@ -51,20 +51,16 @@ class Login extends Component {
             className='input-login'
             onChange={ (e) => this.handleChange(e) }
           />
-          <input
-            type='text'
-            name='skillLevel'
-            list='skill'
+          <select
             value={this.state.skillLevel}
-            placeholder='Select Skill Level...'
+            name="skillLevel"
             className='input-login'
             onChange={ (e) => this.handleChange(e) }
-          />
-          <datalist id='skill'>
-            <option value='Youngling'/>
-            <option value='Padawan'/>
-            <option value='Jedi Master'/>
-          </datalist>
+          >
+            <option value='Youngling'>Youngling</option>
+            <option value='Padawan'>Padawan</option>
+            <option value='Jedi Master'>Jedi Master</option>
+          </select>
           {this.state.hasError && <p className='error-message'>Please Fill out all forms</p>}
           <button className='btn-login' type='button' onClick={ () => this.submitLoginHandler() }>Login</button>
         </form>
