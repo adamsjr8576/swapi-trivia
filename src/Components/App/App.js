@@ -4,6 +4,7 @@ import Nav from '../Nav/Nav.js';
 import Login from '../Login/Login.js';
 
 
+
 class App extends Component {
   constructor() {
     super()
@@ -23,7 +24,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='page-container'>
         <Nav />
         <main>
           <Login
