@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
+import App from '../App/App.js'
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
