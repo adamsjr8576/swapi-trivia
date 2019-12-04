@@ -3,7 +3,7 @@ import './MovieContainer.scss';
 import MovieCard from '../MovieCard/MovieCard.js';
 
 const MovieContainer = ({ movieCards }) => {
-  const movies = movieCards.map(card => {
+  const movies = movieCards.sort((a, b) => a.episode_id - b.episode_id).map(card => {
     return(
       <MovieCard 
         title={card.title}

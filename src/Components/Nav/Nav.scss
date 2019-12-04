@@ -6,18 +6,8 @@ nav {
   width: 99%;
 }
 
-.btn-info {
-  width: 2%;
-  border-radius: 50%;
-  font-size: 1.5em;
-  background-color: black;
-  color: white;
-  outline: 0;
-  cursor: pointer;
-}
-
 h1 {
-  width: 65%;
+  width: 45%;
   font-size: 2em;
 }
 
@@ -41,6 +31,39 @@ h1 {
   background-color: black;
   color: white;
   font-size: 1.5em;
+  outline: 0;
+  cursor: pointer;
+}
+
+.user-info {
+  width: 400px;
+}
+
+.user-inner {
+  align-items: baseline;
+  display: flex;
+  overflow: hidden;
+  width: 50px;
+}
+
+.user-inner:hover {
+  width: 350px;
+}
+
+.user-p {
+  margin: 10px;
+}
+
+.i-p {
+  min-width: 50px;
+  max-width: 50px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  text-align: center;
+  padding-top: 10px;
+  background-color: black;
+  color: white;
   outline: 0;
   cursor: pointer;
 }

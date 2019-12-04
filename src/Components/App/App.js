@@ -31,9 +31,12 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.userInfo)
     return (
       <div className='page-container'>
-        <Nav />
+        <Nav
+          userInfo={this.state.userInfo}
+        />
         <main>
           {this.state.isLoggedIn ? 
             <MovieContainer 
