@@ -23,7 +23,12 @@ class App extends Component {
   }
 
   handleLogin = () => {
-    this.setState({ isLoggedIn: true })
+    const loggedIn = this.state.isLoggedIn ? false : true;
+    this.setState({ isLoggedIn: loggedIn });
+  }
+
+  resetUserInfo = () => {
+    this.setState( {userInfo: {} })
   }
 
   handleUserInfo = (info) => {
@@ -31,11 +36,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.userInfo)
     return (
       <div className='page-container'>
         <Nav
           userInfo={this.state.userInfo}
+          handleLogin={this.handleLogin}
+          resetUserInfo={this.resetUserInfo}
         />
         <main>
           {this.state.isLoggedIn ? 

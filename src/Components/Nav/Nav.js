@@ -1,7 +1,7 @@
 import React from 'react';
 import './Nav.scss'
 
-const Nav = ({ userInfo }) => {
+const Nav = ({ userInfo, handleLogin, resetUserInfo }) => {
   return (
     <nav>
       <div className='user-info'>
@@ -14,10 +14,9 @@ const Nav = ({ userInfo }) => {
       </div>
       <h1>Star Wars</h1>
       <button className='btn-favorites'>Favorites</button>
-      <button className='btn-logout'>Logout</button>
+      <button className='btn-logout' onClick={() => {handleLogin(); resetUserInfo()}}>Logout</button>
     </nav>
   )
-
 }
 
 export default Nav;
