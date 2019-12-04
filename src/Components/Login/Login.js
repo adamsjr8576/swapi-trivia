@@ -27,10 +27,6 @@ class Login extends Component {
     }
   }
 
-  submitLoginHandler = () => {
-    this.handleLoginError();
-  }
-
   render() {
       return (
         <form className='form-login'>
@@ -66,7 +62,7 @@ class Login extends Component {
             </select>
           </div>
           {this.state.hasError && <p className='error-message'>Please Fill out all forms</p>}
-          <button className='btn-login' type='button' onClick={ () => this.submitLoginHandler() }>Login</button>
+          <button className='btn-login' type='button' onClick={ () => this.handleLoginError() }>Login</button>
         </form>
       )
   }
