@@ -3,6 +3,7 @@ import './App.scss';
 import Nav from '../Nav/Nav.js';
 import Login from '../Login/Login.js';
 import MovieContainer from '../MovieContainer/MovieContainer.js';
+import { Route, NavLink, Link } from 'react-router-dom';
 
 
 
@@ -11,9 +12,10 @@ class App extends Component {
     super()
     this.state = {
       display: [],
-      isLoggedIn: false,
+      isLoading: true,
       userInfo: {},
-      characters: []
+      characters: [],
+      hasError: true
     }
   }
 
@@ -23,13 +25,12 @@ class App extends Component {
       .then(data => this.setState({ display: data.results }))
   }
 
-  handleLogin = () => {
-    const loggedIn = this.state.isLoggedIn ? false : true;
-    this.setState({ isLoggedIn: loggedIn });
+  handleLoginError = (loginStatus) => {
+    this.setState({ hasError: loginStatus });
   }
 
   resetUserInfo = () => {
-    this.setState( {userInfo: {} })
+    this.setState({ userInfo: {} })
   }
 
   handleUserInfo = (info) => {
@@ -100,23 +101,34 @@ class App extends Component {
   render() {
     return (
       <div className='page-container'>
-        <Nav
-          userInfo={this.state.userInfo}
-          handleLogin={this.handleLogin}
-          resetUserInfo={this.resetUserInfo}
-        />
-        <main>
-          {this.state.isLoggedIn ?
-            <MovieContainer
-              getCharacterData={this.getCharacterData}
-              movieCards={this.state.display}
-            /> :
-            <Login
+          <Route exact path='/movies' render={ () =>
+            <Nav
+              userInfo={this.state.userInfo}
               handleLogin={this.handleLogin}
+              resetUserInfo={this.resetUserInfo}
+            />
+          }/>
+        <main>
+          <Route exact path='/movies' render={ () => 
+          this.state.hasError ? 
+            <section>  
+              <h3>Error</h3>
+              <Link to='/'>
+                <button>Back</button>
+              </Link>
+            </section>  :
+          <MovieContainer
+          getCharacterData={this.getCharacterData}
+          movieCards={this.state.display}
+        />
+          }/>
+        </main>
+        <Route exact path='/' render={ () =>             
+            <Login
+              handleLoginError={this.handleLoginError}
               handleUserInfo={this.handleUserInfo}
             />
-          }
-        </main>
+          }/>
       </div>
     );
   }
