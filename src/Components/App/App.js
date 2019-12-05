@@ -37,8 +37,16 @@ class App extends Component {
   }
 
   getCharacterData = (id) => {
-    const movieData = this.state.display.filter(movie => movie.episode_id === Number(id));
-    const promises = movieData[0].characters.map(character => {
+    fetch('https://swapi.co/api/films/')
+    .then(res => res.json())
+    .then(data => this.handleCharacterFetch(data, id))
+    .then(characterData => this.setState({ characters: characterData }))
+  }
+
+  handleCharacterFetch = (movies, id) => {
+    let movieData = movies.results.filter(movie => movie.episode_id === Number(id));
+    let firstTenCharacters = movieData[0].characters.slice(0, 10);
+    const promises = firstTenCharacters.map(character => {
       return fetch(character)
       .then(res => res.json())
       .then(data => this.handleCharacterInfo(data))
@@ -55,14 +63,11 @@ class App extends Component {
           character: object2.character,
           openingCrawl: movieData[0].opening_crawl
         }
-        return infoObject
+        return infoObject;
       })
       .catch(err => console.log(err));
     });
-    let characterData = Promise.all(promises);
-    console.log(characterData);
-    this.setState({ characters: characterData });
-    console.log(this.state.characters);
+    return Promise.all(promises);
   }
 
   handleCharacterInfo = (character) => {
