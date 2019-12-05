@@ -102,6 +102,7 @@ class App extends Component {
     return (
       <div className='page-container'>
           <Route exact path='/movies' render={ () =>
+          !this.state.hasError &&  
             <Nav
               userInfo={this.state.userInfo}
               handleLogin={this.handleLogin}
