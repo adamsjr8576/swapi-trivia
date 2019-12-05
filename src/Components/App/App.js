@@ -3,6 +3,7 @@ import './App.scss';
 import Nav from '../Nav/Nav.js';
 import Login from '../Login/Login.js';
 import MovieContainer from '../MovieContainer/MovieContainer.js';
+import Error from '../Error/Error.js'
 import { Route, NavLink, Link } from 'react-router-dom';
 
 
@@ -102,26 +103,21 @@ class App extends Component {
     return (
       <div className='page-container'>
           <Route exact path='/movies' render={ () =>
-          !this.state.hasError &&  
-            <Nav
-              userInfo={this.state.userInfo}
-              handleLogin={this.handleLogin}
-              resetUserInfo={this.resetUserInfo}
-            />
-          }/>
+            !this.state.hasError &&  
+              <Nav
+                userInfo={this.state.userInfo}
+                handleLoginError={this.handleLoginError}
+                resetUserInfo={this.resetUserInfo}
+              />
+            }/>
         <main>
           <Route exact path='/movies' render={ () => 
-          this.state.hasError ? 
-            <section>  
-              <h3>Error</h3>
-              <Link to='/'>
-                <button>Back</button>
-              </Link>
-            </section>  :
-          <MovieContainer
-          getCharacterData={this.getCharacterData}
-          movieCards={this.state.display}
-        />
+            this.state.hasError ? 
+            <Error /> :
+            <MovieContainer
+              getCharacterData={this.getCharacterData}
+              movieCards={this.state.display}
+            />
           }/>
         </main>
         <Route exact path='/' render={ () =>             
