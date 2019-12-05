@@ -2,7 +2,6 @@ import React from 'react';
 import './MovieCard.scss';
 
 const MovieCard = ({ title, episode_id, release_date, getCharacterData }) => {
-  console.log(typeof getCharacterData);
   return(
     <article className='article-movie'>
       <h4>{title}</h4>
