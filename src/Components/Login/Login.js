@@ -34,9 +34,10 @@ class Login extends Component {
         <main className="main-login">
           <img src={starWarsLogo} alt="star wars logo" className="Login-logo" />
           <form className='form-login'>
-            <h2>Please Login</h2>
+            <h2 className="header-login">Please Login</h2>
               <input
                 type='text'
+                maxlength='25'
                 name='name'
                 value={this.state.name}
                 placeholder='Enter Name'
@@ -45,6 +46,7 @@ class Login extends Component {
               />
               <input
                 type='text'
+                maxlength='65'
                 name='quote'
                 value={this.state.quote}
                 placeholder='Enter Favorite StarWars Quote'
