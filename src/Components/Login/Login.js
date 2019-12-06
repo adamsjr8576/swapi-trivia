@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Login.scss';
+import { Route, Link } from 'react-router-dom';
+
 
 class Login extends Component {
   constructor(props) {
@@ -8,7 +10,6 @@ class Login extends Component {
       name: '',
       quote: '',
       skillLevel: 'Youngling',
-      hasError: false
     }
   }
 
@@ -16,14 +17,14 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleLoginError = () => {
+  loginErrorHandler = () => {
     const { name, quote, skillLevel } = this.state;
     if (name === '' || quote === '' || skillLevel === '') {
-      this.setState({ hasError: true });
+      this.props.handleLoginError(true)
     } else {
-      this.setState({ hasError: false });
-      this.props.handleLogin();
       this.props.handleUserInfo(this.state);
+      this.props.handleLoginError(false)
+
     }
   }
 
@@ -62,7 +63,9 @@ class Login extends Component {
             </select>
           </div>
           {this.state.hasError && <p className='error-message'>Please Fill out all forms</p>}
-          <button className='btn-login' type='button' onClick={ () => this.handleLoginError() }>Login</button>
+          <Link to='/movies'>
+            <button className='btn-login' type='button' onClick={ () => this.loginErrorHandler() }>Login</button>
+          </Link>
         </form>
       )
   }

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Nav.scss'
 
-const Nav = ({ userInfo, handleLogin, resetUserInfo }) => {
+const Nav = ({ userInfo, handleLoginError, resetUserInfo }) => {
   return (
     <nav>
       <div className='user-info'>
@@ -14,7 +15,9 @@ const Nav = ({ userInfo, handleLogin, resetUserInfo }) => {
       </div>
       <h1>Star Wars</h1>
       <button className='btn-favorites'>Favorites</button>
-      <button className='btn-logout' onClick={() => {handleLogin(); resetUserInfo()}}>Logout</button>
+      <Link to='/'>
+        <button className='btn-logout' onClick={() => {resetUserInfo(); handleLoginError(false)}}>Logout</button>
+      </Link>
     </nav>
   )
 }

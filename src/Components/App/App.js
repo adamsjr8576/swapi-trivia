@@ -3,6 +3,9 @@ import './App.scss';
 import Nav from '../Nav/Nav.js';
 import Login from '../Login/Login.js';
 import MovieContainer from '../MovieContainer/MovieContainer.js';
+import Error from '../Error/Error.js';
+import CharacterContainer from '../CharacterContainer/CharacterContainer.js';
+import { Route } from 'react-router-dom';
 
 
 
@@ -11,9 +14,10 @@ class App extends Component {
     super()
     this.state = {
       display: [],
-      isLoggedIn: false,
+      characters: [],
       userInfo: {},
-      characters: []
+      isLoading: true,
+      hasError: true
     }
   }
 
@@ -21,15 +25,15 @@ class App extends Component {
     fetch('https://swapi.co/api/films/')
       .then(res => res.json())
       .then(data => this.setState({ display: data.results }))
+      .then(data => this.setState({ isLoading: false }))
   }
 
-  handleLogin = () => {
-    const loggedIn = this.state.isLoggedIn ? false : true;
-    this.setState({ isLoggedIn: loggedIn });
+  handleLoginError = (loginStatus) => {
+    this.setState({ hasError: loginStatus });
   }
 
   resetUserInfo = () => {
-    this.setState( {userInfo: {} })
+    this.setState({  hasError: true, userInfo: {}, characters: [], })
   }
 
   handleUserInfo = (info) => {
@@ -37,10 +41,11 @@ class App extends Component {
   }
 
   getCharacterData = (id) => {
+    this.setState({ isLoading: true })
     fetch('https://swapi.co/api/films/')
     .then(res => res.json())
     .then(data => this.handleCharacterFetch(data, id))
-    .then(characterData => this.setState({ characters: characterData }))
+    .then(characterData => this.setState({ characters: characterData, isLoading: false }))
   }
 
   handleCharacterFetch = (movies, id) => {
@@ -100,23 +105,43 @@ class App extends Component {
   render() {
     return (
       <div className='page-container'>
-        <Nav
-          userInfo={this.state.userInfo}
-          handleLogin={this.handleLogin}
-          resetUserInfo={this.resetUserInfo}
-        />
+          <Route path='/movies' render={ () =>
+            !this.state.hasError &&  
+              <Nav
+                userInfo={this.state.userInfo}
+                handleLoginError={this.handleLoginError}
+                resetUserInfo={this.resetUserInfo}
+              />
+            }/>
         <main>
-          {this.state.isLoggedIn ?
-            <MovieContainer
-              getCharacterData={this.getCharacterData}
-              movieCards={this.state.display}
-            /> :
+          <Route exact path='/movies' render={ () => 
+            {if (this.state.hasError) {
+              return <Error />
+             } else if (this.state.isLoading ) {
+              return <h2>Loading...</h2>
+            } else {
+             return <MovieContainer
+               getCharacterData={this.getCharacterData}
+               movieCards={this.state.display}
+             />
+           }}
+          }/>
+          <Route path='/movies/:movies_id' render={ () => {
+            return(
+              this.state.characters.length ? 
+               <CharacterContainer 
+                characters={this.state.characters}
+              /> :
+              <h2>Loading...</h2>
+            )
+          }} />
+        </main>
+        <Route exact path='/' render={ () =>             
             <Login
-              handleLogin={this.handleLogin}
+              handleLoginError={this.handleLoginError}
               handleUserInfo={this.handleUserInfo}
             />
-          }
-        </main>
+          }/>
       </div>
     );
   }
