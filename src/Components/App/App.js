@@ -106,15 +106,20 @@ class App extends Component {
     return (
       <div className='page-container'>
           <Route path='/movies' render={ () =>
-            !this.state.hasError &&  
+            !this.state.hasError &&
               <Nav
                 userInfo={this.state.userInfo}
                 handleLoginError={this.handleLoginError}
                 resetUserInfo={this.resetUserInfo}
               />
             }/>
-        <main>
-          <Route exact path='/movies' render={ () => 
+          <Route exact path='/' render={ () =>
+              <Login
+                handleLoginError={this.handleLoginError}
+                handleUserInfo={this.handleUserInfo}
+              />
+            }/>
+          <Route exact path='/movies' render={ () =>
             {if (this.state.hasError) {
               return <Error />
              } else if (this.state.isLoading ) {
@@ -128,20 +133,13 @@ class App extends Component {
           }/>
           <Route path='/movies/:movies_id' render={ () => {
             return(
-              this.state.characters.length ? 
-               <CharacterContainer 
+              this.state.characters.length ?
+               <CharacterContainer
                 characters={this.state.characters}
               /> :
               <h2>Loading...</h2>
             )
           }} />
-        </main>
-        <Route exact path='/' render={ () =>             
-            <Login
-              handleLoginError={this.handleLoginError}
-              handleUserInfo={this.handleUserInfo}
-            />
-          }/>
       </div>
     );
   }

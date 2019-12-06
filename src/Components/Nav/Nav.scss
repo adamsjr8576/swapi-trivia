@@ -7,13 +7,14 @@ nav {
 }
 
 h1 {
-  width: 25%;
+  text-align: center;
+  width: 20%;
   font-size: 2em;
 }
 
 .btn-favorites {
   opacity: .8;
-  width: 10%;
+  width: 13%;
   padding: 5px;
   border-radius: 10px;
   background-color: black;
@@ -25,7 +26,7 @@ h1 {
 
 .btn-logout {
   opacity: .8;
-  width: 10%;
+  width: 100%;
   padding: 5px;
   border-radius: 10px;
   background-color: black;
@@ -36,14 +37,16 @@ h1 {
 }
 
 .user-info {
-  width: 400px;
+  width: 450px;
 }
 
 .user-inner {
   align-items: baseline;
   display: flex;
   overflow: hidden;
-  width: 50px;
+  width: 55px;
+  border-right: 2px solid black;
+  transition: width 3s;
 }
 
 .user-inner:hover {
@@ -52,6 +55,10 @@ h1 {
 
 .user-p {
   margin: 10px;
+}
+
+.link-logout {
+  width: 13%;
 }
 
 .i-p {

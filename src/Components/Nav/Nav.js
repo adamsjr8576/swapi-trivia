@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Nav.scss'
+import './Nav.scss';
+import starWarsLogo from '../.././images/images.js'
 
 const Nav = ({ userInfo, handleLoginError, resetUserInfo }) => {
   return (
@@ -13,9 +14,9 @@ const Nav = ({ userInfo, handleLoginError, resetUserInfo }) => {
           <p className='user-p'>{userInfo.skillLevel}</p>
         </div>
       </div>
-      <h1>Star Wars</h1>
+      <img src={starWarsLogo} alt="star wars logo" className="nav-logo" />
       <button className='btn-favorites'>Favorites</button>
-      <Link to='/'>
+      <Link to='/' className="link-logout">
         <button className='btn-logout' onClick={() => {resetUserInfo(); handleLoginError(false)}}>Logout</button>
       </Link>
     </nav>
@@ -23,4 +24,3 @@ const Nav = ({ userInfo, handleLoginError, resetUserInfo }) => {
 }
 
 export default Nav;
-
