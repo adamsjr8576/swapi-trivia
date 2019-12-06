@@ -3,8 +3,9 @@ import './App.scss';
 import Nav from '../Nav/Nav.js';
 import Login from '../Login/Login.js';
 import MovieContainer from '../MovieContainer/MovieContainer.js';
-import Error from '../Error/Error.js'
-import { Route, NavLink, Link } from 'react-router-dom';
+import Error from '../Error/Error.js';
+import CharacterContainer from '../CharacterContainer/CharacterContainer.js';
+import { Route } from 'react-router-dom';
 
 
 
@@ -13,9 +14,9 @@ class App extends Component {
     super()
     this.state = {
       display: [],
-      isLoading: true,
-      userInfo: {},
       characters: [],
+      userInfo: {},
+      isLoading: true,
       hasError: true
     }
   }
@@ -24,6 +25,7 @@ class App extends Component {
     fetch('https://swapi.co/api/films/')
       .then(res => res.json())
       .then(data => this.setState({ display: data.results }))
+      .then(data => this.setState({ isLoading: false }))
   }
 
   handleLoginError = (loginStatus) => {
@@ -31,7 +33,7 @@ class App extends Component {
   }
 
   resetUserInfo = () => {
-    this.setState({ userInfo: {} })
+    this.setState({  hasError: true, userInfo: {}, characters: [], })
   }
 
   handleUserInfo = (info) => {
@@ -39,10 +41,11 @@ class App extends Component {
   }
 
   getCharacterData = (id) => {
+    this.setState({ isLoading: true })
     fetch('https://swapi.co/api/films/')
     .then(res => res.json())
     .then(data => this.handleCharacterFetch(data, id))
-    .then(characterData => this.setState({ characters: characterData }))
+    .then(characterData => this.setState({ characters: characterData, isLoading: false }))
   }
 
   handleCharacterFetch = (movies, id) => {
@@ -102,7 +105,7 @@ class App extends Component {
   render() {
     return (
       <div className='page-container'>
-          <Route exact path='/movies' render={ () =>
+          <Route path='/movies' render={ () =>
             !this.state.hasError &&  
               <Nav
                 userInfo={this.state.userInfo}
@@ -112,13 +115,26 @@ class App extends Component {
             }/>
         <main>
           <Route exact path='/movies' render={ () => 
-            this.state.hasError ? 
-            <Error /> :
-            <MovieContainer
-              getCharacterData={this.getCharacterData}
-              movieCards={this.state.display}
-            />
+            {if (this.state.hasError) {
+              return <Error />
+             } else if (this.state.isLoading ) {
+              return <h2>Loading...</h2>
+            } else {
+             return <MovieContainer
+               getCharacterData={this.getCharacterData}
+               movieCards={this.state.display}
+             />
+           }}
           }/>
+          <Route path='/movies/:movies_id' render={ () => {
+            return(
+              this.state.characters.length ? 
+               <CharacterContainer 
+                characters={this.state.characters}
+              /> :
+              <h2>Loading...</h2>
+            )
+          }} />
         </main>
         <Route exact path='/' render={ () =>             
             <Login
