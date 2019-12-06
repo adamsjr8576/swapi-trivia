@@ -31,7 +31,7 @@ class Login extends Component {
 
   render() {
       return (
-        <main>
+        <main className="main-login">
           <img src={starWarsLogo} alt="star wars logo" className="Login-logo" />
           <form className='form-login'>
             <h2>Please Login</h2>

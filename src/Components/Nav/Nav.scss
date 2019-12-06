@@ -6,10 +6,11 @@ nav {
   width: 99%;
 }
 
-h1 {
-  text-align: center;
-  width: 20%;
-  font-size: 2em;
+.nav-logo {
+  margin: 15px 0;
+  height: 100px;
+  width: 175px;
+  opacity: .85;
 }
 
 .btn-favorites {
@@ -50,7 +51,7 @@ h1 {
 }
 
 .user-inner:hover {
-  width: 350px;
+  width: 450px;
 }
 
 .user-p {

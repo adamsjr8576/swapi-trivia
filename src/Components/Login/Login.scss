@@ -1,4 +1,4 @@
-main {
+.main-login {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -25,12 +25,6 @@ form {
   justify-content: space-around;
   border: 3px solid white;
   border-radius: 10px;
-}
-
-.nav-logo {
-  margin: 15px 0;
-  height: 100px;
-  width: 175px;
 }
 
 .input-login {

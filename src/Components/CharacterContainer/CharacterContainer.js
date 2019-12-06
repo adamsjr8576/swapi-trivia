@@ -3,21 +3,21 @@ import './CharacterContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard.js';
 
 const CharacterContainer = ( { characters }) => {
-  console.log(characters)
   const characterInfo = characters.map(character => {
     return(
       <CharacterCard
         {...character}
+        // key="character.character"
       />
     )
   })
   return(
-    <div>
-      <h4>{characters[0].opening_crawl}</h4>
-      <article>
+    <main className="character-container">
+      <p className="opening-crawl">{characters[0].openingCrawl}</p>
+      <section className="section-character-container">
         {characterInfo}
-      </article>
-    </div>
+      </section>
+    </main>
   )
 }
 

@@ -1,0 +1,23 @@
+.character-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 81vh;
+}
+
+.opening-crawl {
+  width: 75%;
+}
+
+.section-character-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 82vh;
+  justify-content: space-around;
+  padding: 10px;
+  overflow: scroll;
+  width: 95%;
+}
