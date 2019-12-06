@@ -40,6 +40,10 @@ class App extends Component {
     this.setState({ userInfo: info })
   }
 
+  resetCharacters = () => {
+    this.setState({ characters: [] })
+  }
+
   getCharacterData = (id) => {
     this.setState({ isLoading: true })
     fetch('https://swapi.co/api/films/')
@@ -136,6 +140,7 @@ class App extends Component {
               this.state.characters.length ?
                <CharacterContainer
                 characters={this.state.characters}
+                resetCharacters={this.resetCharacters}
               /> :
               <h2>Loading...</h2>
             )
