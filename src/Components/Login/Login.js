@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Login.scss';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import starWarsLogo from '../.././images/images.js'
 
 
@@ -37,7 +37,7 @@ class Login extends Component {
             <h2 className="header-login">Please Login</h2>
               <input
                 type='text'
-                maxlength='25'
+                maxLength='25'
                 name='name'
                 value={this.state.name}
                 placeholder='Enter Name'
@@ -46,7 +46,7 @@ class Login extends Component {
               />
               <input
                 type='text'
-                maxlength='65'
+                maxLength='65'
                 name='quote'
                 value={this.state.quote}
                 placeholder='Enter Favorite StarWars Quote'

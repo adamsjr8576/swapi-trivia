@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import App from '../App/App.js'
+import App from '../App/App.js';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('App', () => {
+
+  it('Should match the snapshot with all data', () => {
+    const wrapper = shallow(<App />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+})

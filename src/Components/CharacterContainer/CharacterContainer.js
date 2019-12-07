@@ -8,7 +8,7 @@ const CharacterContainer = ( { characters, resetCharacters }) => {
     return(
       <CharacterCard
         {...character}
-        // key="character.character"
+        key={character.character}
       />
     )
   })
