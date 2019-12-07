@@ -33,4 +33,35 @@ describe('CharacterContainer', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call resetCharacters on click', () => {
+    const resetCharactersMock = jest.fn()
+    const wrapper = shallow(<CharacterContainer
+    characters={[{
+      character: "C-3PO",
+      creature: "artificial",
+      name: "Tatooine",
+      openingCrawl: "the guardians of",
+      population: "200000",
+      relatedFilms:[
+        {relatedFilms: "The Empire Strikes Back"},
+        {relatedFilms: "Attack of the Clones"}],
+        species: "Droid"
+    }, {
+      character: "R2-D2",
+      creature: "artificial",
+      name: "Naboo",
+      openingCrawl: "Turmoil has engulfed",
+      population: "4500000000",
+      relatedFilms: [
+        {relatedFilms: "The Empire Strikes Back"},
+        {relatedFilms: "Attack of the Clones"}],
+      species: "Droid"
+    }]}
+    resetCharacters={resetCharactersMock}
+    />);
+
+    wrapper.find('.button-movies').simulate('click');
+    expect(resetCharactersMock).toHaveBeenCalled();
+  })
 });

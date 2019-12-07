@@ -2,6 +2,7 @@ import React from 'react';
 import './CharacterContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard.js';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CharacterContainer = ( { characters, resetCharacters }) => {
   const characterInfo = characters.map(character => {
@@ -26,3 +27,8 @@ const CharacterContainer = ( { characters, resetCharacters }) => {
 }
 
 export default CharacterContainer;
+
+CharacterContainer.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object),
+  resetCharacters: PropTypes.func,
+}
