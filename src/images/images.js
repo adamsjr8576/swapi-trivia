@@ -1,3 +1,9 @@
 import starWarsLogo from './starwarslogo.png';
+import errorGif from './giphy.gif';
 
-export default starWarsLogo;
+const images = {
+  starWarsLogo: starWarsLogo,
+  errorGif: errorGif
+}
+
+export default images
