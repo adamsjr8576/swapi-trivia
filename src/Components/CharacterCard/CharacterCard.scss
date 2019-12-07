@@ -1,0 +1,16 @@
+
+.character-card {
+  border: solid 3px white;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 375px;
+  align-items: center;
+  margin: 10px;
+  opacity: .9;
+  width: 30%;
+  min-width: 400px;
+  overflow: auto;
+}

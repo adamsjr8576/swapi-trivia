@@ -6,14 +6,16 @@ nav {
   width: 99%;
 }
 
-h1 {
-  width: 25%;
-  font-size: 2em;
+.nav-logo {
+  margin: 15px 0;
+  height: 100px;
+  width: 175px;
+  opacity: .85;
 }
 
 .btn-favorites {
   opacity: .8;
-  width: 10%;
+  width: 13%;
   padding: 5px;
   border-radius: 10px;
   background-color: black;
@@ -25,7 +27,7 @@ h1 {
 
 .btn-logout {
   opacity: .8;
-  width: 10%;
+  width: 100%;
   padding: 5px;
   border-radius: 10px;
   background-color: black;
@@ -36,22 +38,29 @@ h1 {
 }
 
 .user-info {
-  width: 400px;
+  width: 450px;
 }
 
 .user-inner {
   align-items: baseline;
   display: flex;
   overflow: hidden;
-  width: 50px;
+  width: 55px;
+  height: 100px;
+  border-right: 2px solid black;
+  transition: width 3s;
 }
 
 .user-inner:hover {
-  width: 350px;
+  width: 450px;
 }
 
 .user-p {
   margin: 10px;
+}
+
+.link-logout {
+  width: 13%;
 }
 
 .i-p {

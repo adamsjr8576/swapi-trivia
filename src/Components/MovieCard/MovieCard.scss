@@ -1,5 +1,6 @@
 .article-movie {
-  border: solid 2px white;
+  border: solid 3px white;
+  border-radius: 10px;
   background-color: black;
   color: white;
   display: flex;
@@ -9,4 +10,5 @@
   margin: 10px;
   opacity: .9;
   width: 30%;
-} 
+  min-width: 400px;
+}
