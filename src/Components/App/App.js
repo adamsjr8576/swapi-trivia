@@ -50,7 +50,7 @@ class App extends Component {
   handleFavorites = (favorite) => {
     const { favorites } = this.state;
     const filteredFavorites = favorites.filter(character => character.character !== favorite.character);
-    favorites.includes(favorite.name) ? this.setState({ favorites: filteredFavorites }) : this.setState({ favorites: [...this.state.favorites, favorite] })
+    favorites.filter(character => character.character === favorite.character).length > 0 ? this.setState({ favorites: filteredFavorites }) : this.setState({ favorites: [...this.state.favorites, favorite] });
   }
 
   getCharacterData = (id) => {
@@ -128,14 +128,16 @@ class App extends Component {
   }
 
   render() {
+    const {display, characters, favorites, userInfo, isLoading, hasError} = this.state;
     return (
       <div className='page-container'>
           <Route path='/movies' render={ () =>
-            !this.state.hasError &&
+            !hasError &&
               <Nav
-                userInfo={this.state.userInfo}
+                userInfo={userInfo}
                 handleLoginError={this.handleLoginError}
                 resetUserInfo={this.resetUserInfo}
+                favorites={favorites}
               />
             }/>
           <Route exact path='/' render={ () =>
@@ -145,22 +147,22 @@ class App extends Component {
               />
             }/>
           <Route exact path='/movies' render={ () =>
-            {if (this.state.hasError) {
+            {if (hasError) {
               return <Error />
-             } else if (this.state.isLoading ) {
+             } else if (isLoading ) {
               return <Loading />
             } else {
              return <MovieContainer
                getCharacterData={this.getCharacterData}
-               movieCards={this.state.display}
+               movieCards={display}
              />
            }}
           }/>
           <Route path='/movies/:movies_id' render={ () => {
             return (
-              this.state.characters.length ?
+              characters.length ?
                <CharacterContainer
-                characters={this.state.characters}
+                characters={characters}
                 resetCharacters={this.resetCharacters}
                 handleFavorites={this.handleFavorites}
               /> :
@@ -171,12 +173,13 @@ class App extends Component {
             return (
               <>
                 <Nav
-                  userInfo={this.state.userInfo}
+                  userInfo={userInfo}
                   handleLoginError={this.handleLoginError}
                   resetUserInfo={this.resetUserInfo}
+                  favorites={favorites}
                 />
                 <FavoritesContainer
-                  favorites={this.state.favorites}
+                  favorites={favorites}
                   handleFavorites={this.handleFavorites}
                   resetCharacters={this.resetCharacters}
                 />
