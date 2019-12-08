@@ -25,6 +25,11 @@ nav {
   cursor: pointer;
 }
 
+.btn-favorites:hover {
+  background-color: white;
+  color: black;
+}
+
 .btn-logout {
   opacity: .8;
   width: 100%;
@@ -37,6 +42,11 @@ nav {
   cursor: pointer;
 }
 
+.btn-logout:hover {
+  background-color: white;
+  color: black;
+}
+
 .user-info {
   width: 450px;
   margin-left: 5px;
@@ -47,14 +57,14 @@ nav {
   justify-content: space-between;
   display: flex;
   overflow: hidden;
-  width: 80px;
+  width: 90px;
   height: 100px;
   border-right: 2px solid black;
   transition: width 3s;
 }
 
 .user-inner:hover {
-  width: 450px;
+  width: 500px;
 }
 
 .user-p {
@@ -65,12 +75,16 @@ nav {
   width: 13%;
 }
 
+span {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .i-p {
   min-width: 70px;
   max-width: 70px;
   height: 70px;
-  margin-left: 5px;
-  margin-bottom: 15px;
+  margin: 15px 10px;
   cursor: pointer;
   animation: rotating 7s linear infinite;
 }

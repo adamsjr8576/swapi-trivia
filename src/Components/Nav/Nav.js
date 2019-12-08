@@ -9,9 +9,9 @@ const Nav = ({ userInfo, handleLoginError, resetUserInfo }) => {
       <div className='user-info'>
         <div className='user-inner'>
           <img src={images.falcon} className='i-p' />
-          <p className='user-p'>{userInfo.name}</p>
-          <p className='user-p'>{userInfo.quote}</p>
-          <p className='user-p'>{userInfo.skillLevel}</p>
+          <p className='user-p'><span>Name: </span>{userInfo.name}</p>
+          <p className='user-p'><span>Quote: </span>{userInfo.quote}</p>
+          <p className='user-p'><span>Skill: </span>{userInfo.skillLevel}</p>
         </div>
       </div>
       <img src={images.starWarsLogo} alt="star wars logo" className="nav-logo" />

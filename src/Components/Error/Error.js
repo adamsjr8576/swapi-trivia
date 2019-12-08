@@ -8,7 +8,7 @@ const Error = () => {
   return(
     <section className="section-error">
       <h3 className="header-error">Error!!</h3>
-      <p className="p-error">Please fill out all fields when logging in</p>
+      <p className="p-error">Please fill out all fields before logging in.</p>
       <img className="gif-error" src={images.errorGif} alt="Gif of small bird scared" />
       <Link to='/' className="link-error">
         <button className="button-error">Back To Login</button>

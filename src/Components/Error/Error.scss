@@ -7,17 +7,26 @@
 .header-error {
   font-size: 3em;
   margin: 10px;
+  color: indianred;
 }
 
 .p-error {
   margin: 5px;
   font-size: 2em;
+  padding: 10px;
+  border: indianred 3px solid;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .gif-error {
   height: 350px;
   width: 300px;
   opacity: 1;
+  padding: 15px;
+  border: indianred 3px solid;
+  background-color: indianred;
+  border-radius: 10px;
 }
 
 .link-error {
