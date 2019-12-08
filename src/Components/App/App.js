@@ -5,6 +5,7 @@ import Login from '../Login/Login.js';
 import MovieContainer from '../MovieContainer/MovieContainer.js';
 import Error from '../Error/Error.js';
 import CharacterContainer from '../CharacterContainer/CharacterContainer.js';
+import Loading from '../Loading/Loading.js'
 import { Route } from 'react-router-dom';
 
 
@@ -139,7 +140,7 @@ class App extends Component {
             {if (this.state.hasError) {
               return <Error />
              } else if (this.state.isLoading ) {
-              return <h2>Loading...</h2>
+              return <Loading />
             } else {
              return <MovieContainer
                getCharacterData={this.getCharacterData}
@@ -154,7 +155,7 @@ class App extends Component {
                 characters={this.state.characters}
                 resetCharacters={this.resetCharacters}
               /> :
-              <h2>Loading...</h2>
+              <Loading />
             )
           }} />
       </div>

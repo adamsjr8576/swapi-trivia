@@ -5,7 +5,7 @@ import images from '../.././images/images.js';
 
 
 const Error = () => {
-  return(
+  return (
     <section className="section-error">
       <h3 className="header-error">Error!!</h3>
       <p className="p-error">Please fill out all fields before logging in.</p>
