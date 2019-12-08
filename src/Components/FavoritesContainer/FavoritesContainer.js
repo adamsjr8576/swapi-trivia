@@ -15,6 +15,7 @@ const FavoritesContainer = ({ favorites, handleFavorites, resetCharacters }) => 
     )
   });
   return (
+    favorites.length > 0 ?
     <main className="character-container">
       <Link to="/movies" className="link-back-movies">
         <button className="button-movies" onClick={() => resetCharacters()}>Return to Movies</button>
@@ -23,6 +24,13 @@ const FavoritesContainer = ({ favorites, handleFavorites, resetCharacters }) => 
         {favoriteCards}
       </section>
     </main>
+    :
+    <>
+      <Link to="/movies" className="link-back-movies">
+        <button className="button-movies" onClick={() => resetCharacters()}>Return to Movies</button>
+      </Link>
+      <h4>Find a Favorite Character!!!</h4>
+    </>
   );
 }
 

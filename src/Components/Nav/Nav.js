@@ -15,12 +15,14 @@ const Nav = ({ userInfo, handleLoginError, resetUserInfo, favorites }) => {
         </div>
       </div>
       <img src={images.starWarsLogo} alt='star wars logo' className='nav-logo' />
-      <Link to='/favorites' className='favorites-link'>
-        <button className='btn-favorites'><img src={images.heart} className='nav-favorites-img' alt='heart icon' /> Favorites: {favorites.length}</button>
-      </Link>
-      <Link to='/' className='link-logout'>
-        <button className='btn-logout' onClick={() => {resetUserInfo(); handleLoginError(false)}}>Logout</button>
-      </Link>
+      <div className="nav-buttons">
+        <Link to='/favorites' className='favorites-link'>
+          <button className='btn-favorites'><img src={images.heart} className='nav-favorites-img' alt='heart icon' /> Favorites: {favorites.length}</button>
+        </Link>
+        <Link to='/' className='link-logout'>
+          <button className='btn-logout' onClick={() => {resetUserInfo(); handleLoginError(false)}}>Logout</button>
+        </Link>
+      </div>
     </nav>
   )
 }
