@@ -16,6 +16,7 @@ class App extends Component {
     this.state = {
       display: [],
       characters: [],
+      favorites: [],
       userInfo: {},
       isLoading: true,
       hasError: true
@@ -43,6 +44,10 @@ class App extends Component {
 
   resetCharacters = () => {
     this.setState({ characters: [] })
+  }
+
+  handleFavorites = (favorite) => {
+    this.setState({ favorites: [...this.state.favorites, favorite] })
   }
 
   getCharacterData = (id) => {
@@ -154,6 +159,7 @@ class App extends Component {
                <CharacterContainer
                 characters={this.state.characters}
                 resetCharacters={this.resetCharacters}
+                handleFavorites={this.handleFavorites}
               /> :
               <Loading />
             )
