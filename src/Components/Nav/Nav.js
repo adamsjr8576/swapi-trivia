@@ -8,7 +8,7 @@ const Nav = ({ userInfo, handleLoginError, resetUserInfo }) => {
     <nav>
       <div className='user-info'>
         <div className='user-inner'>
-          <p className='i-p'>i</p>
+          <img src={images.falcon} className='i-p' />
           <p className='user-p'>{userInfo.name}</p>
           <p className='user-p'>{userInfo.quote}</p>
           <p className='user-p'>{userInfo.skillLevel}</p>

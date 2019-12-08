@@ -15,7 +15,7 @@ const CharacterContainer = ( { characters, resetCharacters }) => {
   })
   return(
     <main className="character-container">
-      <Link to="/movies">
+      <Link to="/movies" className="link-back-movies">
         <button className="button-movies" onClick={() => resetCharacters()}>Return to Movies</button>
       </Link>
       <p className="opening-crawl">{characters[0].openingCrawl}</p>
