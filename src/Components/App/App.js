@@ -5,6 +5,7 @@ import Login from '../Login/Login.js';
 import MovieContainer from '../MovieContainer/MovieContainer.js';
 import Error from '../Error/Error.js';
 import CharacterContainer from '../CharacterContainer/CharacterContainer.js';
+import Loading from '../Loading/Loading.js'
 import { Route } from 'react-router-dom';
 
 
@@ -80,14 +81,26 @@ class App extends Component {
   }
 
   handleCharacterInfo = (character) => {
-    const homeWorldInfo = fetch(character.homeworld)
+    const homeWorldInfo = this.handleCharacterHomeworld(character);
+    const speciesInfo = this.handleCharacterSpecies(character);
+    const relatedFilmsData = this.handleCharacterRelatedFilm(character);
+    let filmsPromises = Promise.all(relatedFilmsData)
+    let promises = [homeWorldInfo, speciesInfo, filmsPromises];
+    return Promise.all(promises);
+  }
+
+  handleCharacterHomeworld = (character) => {
+    return fetch(character.homeworld)
      .then(res => res.json())
      .then(data => ({
       name: data.name,
       population: data.population
       }))
       .catch(err => console.log(err));
-    const speciesInfo = fetch(character.species)
+  }
+
+  handleCharacterSpecies = (character) => {
+    return fetch(character.species)
     .then(res => res.json())
     .then(data => ({
       species: data.name,
@@ -95,15 +108,15 @@ class App extends Component {
       character: character.name
     }))
     .catch(err => console.log(err));
-    const relatedFilmsData = character.films.map(film => {
+  }
+
+  handleCharacterRelatedFilm = (character) => {
+    return character.films.map(film => {
       return fetch(film)
       .then(res => res.json())
       .then(data => ({relatedFilms: data.title}))
       .catch(err => console.log(err));
     });
-    let filmsPromises = Promise.all(relatedFilmsData)
-    let promises = [homeWorldInfo, speciesInfo, filmsPromises];
-    return Promise.all(promises);
   }
 
   render() {
@@ -127,7 +140,7 @@ class App extends Component {
             {if (this.state.hasError) {
               return <Error />
              } else if (this.state.isLoading ) {
-              return <h2>Loading...</h2>
+              return <Loading />
             } else {
              return <MovieContainer
                getCharacterData={this.getCharacterData}
@@ -142,7 +155,7 @@ class App extends Component {
                 characters={this.state.characters}
                 resetCharacters={this.resetCharacters}
               /> :
-              <h2>Loading...</h2>
+              <Loading />
             )
           }} />
       </div>

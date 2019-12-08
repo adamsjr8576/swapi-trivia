@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Login.scss';
-import { Route, Link } from 'react-router-dom';
-import starWarsLogo from '../.././images/images.js'
+import { Link } from 'react-router-dom';
+import images from '../.././images/images.js'
 
 
 class Login extends Component {
@@ -32,12 +32,12 @@ class Login extends Component {
   render() {
       return (
         <main className="main-login">
-          <img src={starWarsLogo} alt="star wars logo" className="Login-logo" />
+          <img src={images.starWarsLogo} alt="star wars logo" className="Login-logo" />
           <form className='form-login'>
             <h2 className="header-login">Please Login</h2>
               <input
                 type='text'
-                maxlength='25'
+                maxLength='25'
                 name='name'
                 value={this.state.name}
                 placeholder='Enter Name'
@@ -46,7 +46,7 @@ class Login extends Component {
               />
               <input
                 type='text'
-                maxlength='65'
+                maxLength='65'
                 name='quote'
                 value={this.state.quote}
                 placeholder='Enter Favorite StarWars Quote'

@@ -2,19 +2,20 @@ import React from 'react';
 import './CharacterContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard.js';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CharacterContainer = ( { characters, resetCharacters }) => {
   const characterInfo = characters.map(character => {
     return(
       <CharacterCard
         {...character}
-        // key="character.character"
+        key={character.character}
       />
     )
   })
   return(
     <main className="character-container">
-      <Link to="/movies">
+      <Link to="/movies" className="link-back-movies">
         <button className="button-movies" onClick={() => resetCharacters()}>Return to Movies</button>
       </Link>
       <p className="opening-crawl">{characters[0].openingCrawl}</p>
@@ -26,3 +27,8 @@ const CharacterContainer = ( { characters, resetCharacters }) => {
 }
 
 export default CharacterContainer;
+
+CharacterContainer.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object),
+  resetCharacters: PropTypes.func,
+}

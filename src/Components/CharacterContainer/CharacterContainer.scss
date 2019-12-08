@@ -21,3 +21,27 @@
   overflow: scroll;
   width: 95%;
 }
+
+.link-back-movies {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button-movies {
+  width: 15%;
+  margin-top: 15px;
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  opacity: .8;
+}
+
+.button-movies:hover {
+  background-color: white;
+  color: black;
+}
