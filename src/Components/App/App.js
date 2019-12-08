@@ -5,7 +5,8 @@ import Login from '../Login/Login.js';
 import MovieContainer from '../MovieContainer/MovieContainer.js';
 import Error from '../Error/Error.js';
 import CharacterContainer from '../CharacterContainer/CharacterContainer.js';
-import Loading from '../Loading/Loading.js'
+import Loading from '../Loading/Loading.js';
+import FavoritesContainer from '../FavoritesContainer/FavoritesContainer.js';
 import { Route } from 'react-router-dom';
 
 
@@ -47,7 +48,9 @@ class App extends Component {
   }
 
   handleFavorites = (favorite) => {
-    this.setState({ favorites: [...this.state.favorites, favorite] })
+    const { favorites } = this.state;
+    const filteredFavorites = favorites.filter(character => character.character !== favorite.character);
+    favorites.includes(favorite.name) ? this.setState({ favorites: filteredFavorites }) : this.setState({ favorites: [...this.state.favorites, favorite] })
   }
 
   getCharacterData = (id) => {
@@ -154,7 +157,7 @@ class App extends Component {
            }}
           }/>
           <Route path='/movies/:movies_id' render={ () => {
-            return(
+            return (
               this.state.characters.length ?
                <CharacterContainer
                 characters={this.state.characters}
@@ -162,8 +165,24 @@ class App extends Component {
                 handleFavorites={this.handleFavorites}
               /> :
               <Loading />
-            )
+            );
           }} />
+          <Route path='/favorites' render={ () => {
+            return (
+              <>
+                <Nav
+                  userInfo={this.state.userInfo}
+                  handleLoginError={this.handleLoginError}
+                  resetUserInfo={this.resetUserInfo}
+                />
+                <FavoritesContainer
+                  favorites={this.state.favorites}
+                  handleFavorites={this.handleFavorites}
+                  resetCharacters={this.resetCharacters}
+                />
+              </>
+            )
+          }}/>
       </div>
     );
   }

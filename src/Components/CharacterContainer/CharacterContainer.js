@@ -4,7 +4,7 @@ import CharacterCard from '../CharacterCard/CharacterCard.js';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const CharacterContainer = ( { characters, resetCharacters, handleFavorites }) => {
+const CharacterContainer = ({ characters, resetCharacters, handleFavorites }) => {
   const characterInfo = characters.map(character => {
     return(
       <CharacterCard
@@ -13,7 +13,7 @@ const CharacterContainer = ( { characters, resetCharacters, handleFavorites }) =
         key={character.character}
       />
     )
-  })
+  });
   return(
     <main className="character-container">
       <Link to="/movies" className="link-back-movies">

@@ -23,6 +23,10 @@
   transform: scale(1.1);
 }
 
+.favorites-img:active {
+  transform: scale(.9);
+}
+
 .button-favorites {
   background-color: black;
   opacity: .9;
@@ -31,6 +35,7 @@
   align-items: center;
   margin-right: 15px;
   cursor: pointer;
+  outline: 0;
 }
 
 .header-character {
