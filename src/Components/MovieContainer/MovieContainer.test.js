@@ -17,7 +17,7 @@ describe('MovieContainer', () => {
         release_date:'1980-05-17' 
       }
     ]
-    const wrapper = shallow(
+    let wrapper = shallow(
       <section>
         <MovieContainer
           {...movieMock}

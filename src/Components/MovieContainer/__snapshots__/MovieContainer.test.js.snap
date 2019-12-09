@@ -1,3 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieContainer Should match the snapshot with data passed in 1`] = `ShallowWrapper {}`;
+exports[`MovieContainer Should match the snapshot with data passed in 1`] = `
+<section>
+  <MovieContainer
+    0={
+      Object {
+        "episode_id": 4,
+        "release_date": "1977-05-25",
+        "title": "A New Hope",
+      }
+    }
+    1={
+      Object {
+        "episode_id": 5,
+        "release_date": "1980-05-17",
+        "title": "Empire Strikes Back",
+      }
+    }
+    getCharacterData={[MockFunction]}
+  />
+</section>
+`;

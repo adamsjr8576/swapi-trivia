@@ -1,3 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Should match the snapshot with all data 1`] = `ShallowWrapper {}`;
+exports[`App Should match the snapshot with all data 1`] = `
+<div
+  className="page-container"
+>
+  <Route
+    path="/movies"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/movies"
+    render={[Function]}
+  />
+  <Route
+    path="/movies/:movies_id"
+    render={[Function]}
+  />
+  <Route
+    path="/favorites"
+    render={[Function]}
+  />
+</div>
+`;
