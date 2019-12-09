@@ -1,3 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading Should match the snapshot with data passed in 1`] = `ShallowWrapper {}`;
+exports[`Loading Should match the snapshot with data passed in 1`] = `
+<section
+  className="loading-gif-container"
+>
+  <img
+    alt="Gif of space rider"
+    className="loading-gif"
+    src="rider.gif"
+  />
+</section>
+`;
