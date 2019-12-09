@@ -28,3 +28,10 @@ const Nav = ({ userInfo, handleLoginError, resetUserInfo, favorites }) => {
 }
 
 export default Nav;
+
+Nav.propTypes = {
+  userInfo: PropTypes.object,
+  handleLoginError: PropTypes.func,
+  resetUserInfo: PropTypes.func,
+  favorites: arrayOf(PropTypes.object)
+}

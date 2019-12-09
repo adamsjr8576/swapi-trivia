@@ -77,3 +77,8 @@ class Login extends Component {
 }
 
 export default Login;
+
+Login.propTypes = {
+  handleLoginError: PropTypes.func,
+  handleUserInfo: PropTypes.func
+}

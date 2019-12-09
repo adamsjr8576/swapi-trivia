@@ -22,3 +22,7 @@ const MovieContainer = ({ movieCards }) => {
 }
 
 export default MovieContainer;
+
+MovieContainer.propTypes = {
+  movieCards: PropTypes.arrayOf(PropTypes.object),
+}
