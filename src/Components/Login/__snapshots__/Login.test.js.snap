@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Should match the snapshot with data passed in 1`] = `
+<main
+  className="main-login"
+>
+  <img
+    alt="star wars logo"
+    className="Login-logo"
+    src="starwarslogo.png"
+  />
+  <form
+    className="form-login"
+  >
+    <h2
+      className="header-login"
+    >
+      Please Login
+    </h2>
+    <input
+      className="input-login input-login-name"
+      maxLength="25"
+      name="name"
+      onChange={[Function]}
+      placeholder="Enter Name"
+      type="text"
+      value=""
+    />
+    <input
+      className="input-login input-login-quote"
+      maxLength="65"
+      name="quote"
+      onChange={[Function]}
+      placeholder="Enter Favorite StarWars Quote"
+      type="text"
+      value=""
+    />
+    <div
+      className="input-container"
+    >
+      <label
+        for="skill"
+      >
+        Skill Level:
+      </label>
+      <select
+        className="input-select input-login-skill"
+        id="skill"
+        name="skillLevel"
+        onChange={[Function]}
+        value="Youngling"
+      >
+        <option
+          value="Youngling"
+        >
+          Youngling
+        </option>
+        <option
+          value="Padawan"
+        >
+          Padawan
+        </option>
+        <option
+          value="Jedi Master"
+        >
+          Jedi Master
+        </option>
+      </select>
+    </div>
+    <Link
+      className="link-button"
+      to="/movies"
+    >
+      <button
+        className="btn-login"
+        onClick={[Function]}
+        type="button"
+      >
+        May The Force Be With You
+      </button>
+    </Link>
+  </form>
+</main>
+`;

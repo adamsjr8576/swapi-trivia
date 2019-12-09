@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav Should match the snapshot with data passed in 1`] = `
+<nav>
+  <div
+    className="user-info"
+  >
+    <div
+      className="user-inner"
+    >
+      <img
+        className="i-p"
+        src="falcon.png"
+      />
+      <p
+        className="user-p"
+      >
+        <span>
+          Name: 
+        </span>
+        Patrick
+      </p>
+      <p
+        className="user-p"
+      >
+        <span>
+          Quote: 
+        </span>
+        Sick wiggy
+      </p>
+      <p
+        className="user-p"
+      >
+        <span>
+          Skill: 
+        </span>
+        Jedi Master
+      </p>
+    </div>
+  </div>
+  <img
+    alt="star wars logo"
+    className="nav-logo"
+    src="starwarslogo.png"
+  />
+  <div
+    className="nav-buttons"
+  >
+    <Link
+      className="favorites-link"
+      to="/favorites"
+    >
+      <button
+        className="btn-favorites"
+      >
+        <img
+          alt="heart icon"
+          className="nav-favorites-img"
+          src="lover.png"
+        />
+         Favorites: 
+      </button>
+    </Link>
+    <Link
+      className="link-logout"
+      to="/"
+    >
+      <button
+        className="btn-logout"
+        onClick={[Function]}
+      >
+        Logout
+      </button>
+    </Link>
+  </div>
+</nav>
+`;

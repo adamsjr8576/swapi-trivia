@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.scss';
-import images from '../.././images/images.js'
+import images from '../.././images/images.js';
+import PropTypes from 'prop-types';
 
 const Nav = ({ userInfo, handleLoginError, resetUserInfo, favorites }) => {
   return (
@@ -30,3 +31,10 @@ const Nav = ({ userInfo, handleLoginError, resetUserInfo, favorites }) => {
 }
 
 export default Nav;
+
+Nav.propTypes = {
+  userInfo: PropTypes.object,
+  handleLoginError: PropTypes.func,
+  resetUserInfo: PropTypes.func,
+  favorites: PropTypes.object
+}

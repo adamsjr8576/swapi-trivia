@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
-import images from '../.././images/images.js'
-
+import images from '../.././images/images.js';
+import PropTypes from 'prop-types';
 
 class Login extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class Login extends Component {
                 name='name'
                 value={this.state.name}
                 placeholder='Enter Name'
-                className='input-login'
+                className='input-login input-login-name'
                 onChange={ (e) => this.handleChange(e) }
               />
               <input
@@ -50,7 +50,7 @@ class Login extends Component {
                 name='quote'
                 value={this.state.quote}
                 placeholder='Enter Favorite StarWars Quote'
-                className='input-login'
+                className='input-login input-login-quote'
                 onChange={ (e) => this.handleChange(e) }
               />
             <div className='input-container'>
@@ -59,7 +59,7 @@ class Login extends Component {
                 id='skill'
                 value={this.state.skillLevel}
                 name='skillLevel'
-                className='input-select'
+                className='input-select input-login-skill'
                 onChange={ (e) => this.handleChange(e) }
               >
                 <option value='Youngling'>Youngling</option>
@@ -77,3 +77,8 @@ class Login extends Component {
 }
 
 export default Login;
+
+Login.propTypes = {
+  handleLoginError: PropTypes.func,
+  handleUserInfo: PropTypes.func
+}
