@@ -11,13 +11,20 @@
   color: indianred;
 }
 
+.p-error-container {
+  text-align: center;
+  margin: 5px;
+  font-size: 1.5em;
+  padding: 10px;
+  border: indianred 5px solid;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  opacity: .9;
+}
+
 .p-error {
   margin: 5px;
-  font-size: 2em;
-  padding: 10px;
-  border: indianred 3px solid;
-  background-color: white;
-  border-radius: 10px;
 }
 
 .gif-error {
@@ -34,6 +41,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  text-decoration: none;
 }
 
 .button-error {

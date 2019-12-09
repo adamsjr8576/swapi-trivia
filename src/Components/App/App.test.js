@@ -5,15 +5,17 @@ import App from '../App/App.js';
 
 describe('App', () => {
 
-  it('Should match the snapshot with all data', () => {
-    const wrapper = shallow(<App />);
+  let wrapper;
 
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  })
+
+  it('Should match the snapshot with all data', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
   it('Should update state with a new hasError when handleLoginError is called', () => {
-    const wrapper = shallow(<App />);
-
     wrapper.setState({hasError: true});
     wrapper.instance().handleLoginError(false);
 
@@ -21,8 +23,6 @@ describe('App', () => {
   });
 
   it('Should update state with a new hasError, userInfo and characters when resetUserInfo is called', () => {
-    const wrapper = shallow(<App />);
-
     wrapper.setState({
       hasError: false,
       userInfo: {
@@ -63,7 +63,6 @@ describe('App', () => {
   });
 
   it('Should update state with userInfo when handleUserInfo is called', () => {
-    const wrapper = shallow(<App />);
     const info = {
       name: 'Luke Skywalker',
       quote: 'Strong you are',
@@ -77,8 +76,6 @@ describe('App', () => {
   });
 
   it('Should reset characters state when resetCharacters is called', () => {
-    const wrapper = shallow(<App />);
-
     wrapper.setState({characters: [
       {
         character: "C-3PO",
@@ -107,5 +104,43 @@ describe('App', () => {
     wrapper.instance().resetCharacters();
 
     expect(wrapper.state('characters')).toEqual([]);
+  });
+
+  it('Should add selected favorite to favorites when handleFavorites is called', () => {
+    const mockFavorite = {
+      character: "C-3PO",
+      creature: "artificial",
+      name: "Tatooine",
+      population: "200000",
+      relatedFilms: [
+        {relatedFilms: "The Empire Strikes Back"},
+        {relatedFilms: "Attack of the Clones"}
+      ],
+      species: "Droid"
+    }
+
+    wrapper.setState({ favorites: [] });
+
+    wrapper.instance().handleFavorites(mockFavorite);
+    expect(wrapper.state('favorites')).toEqual([mockFavorite]);
+  });
+
+  it('Should remove selectecd favorite if it is already in favorite when handleFavorites is called', () => {
+    const mockFavorite2 = {
+      character: "C-3PO",
+      creature: "artificial",
+      name: "Tatooine",
+      population: "200000",
+      relatedFilms: [
+        {relatedFilms: "The Empire Strikes Back"},
+        {relatedFilms: "Attack of the Clones"}
+      ],
+      species: "Droid"
+    }
+
+    wrapper.setState({ favorites: [mockFavorite2] });
+
+    wrapper.instance().handleFavorites(mockFavorite2);
+    expect(wrapper.state('favorites')).toEqual([]);
   })
 });

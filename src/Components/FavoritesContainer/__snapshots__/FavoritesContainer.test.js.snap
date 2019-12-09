@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoritesContainer Should match the snapshot with all data 1`] = `
+<main
+  className="character-container"
+>
+  <Link
+    className="link-back-movies"
+    to="/movies"
+  >
+    <button
+      className="button-movies button1"
+      onClick={[Function]}
+    >
+      Return to Movies
+    </button>
+  </Link>
+  <section
+    className="section-character-container"
+  >
+    <CharacterCard
+      character="C-3PO"
+      creature="artificial"
+      handleFavorites={[MockFunction]}
+      key="C-3PO"
+      name="Tatooine"
+      openingCrawl="the guardians of"
+      population="200000"
+      relatedFilms={
+        Array [
+          Object {
+            "relatedFilms": "The Empire Strikes Back",
+          },
+          Object {
+            "relatedFilms": "Attack of the Clones",
+          },
+        ]
+      }
+      species="Droid"
+    />
+    <CharacterCard
+      character="R2-D2"
+      creature="artificial"
+      handleFavorites={[MockFunction]}
+      key="R2-D2"
+      name="Naboo"
+      openingCrawl="Turmoil has engulfed"
+      population="4500000000"
+      relatedFilms={
+        Array [
+          Object {
+            "relatedFilms": "The Empire Strikes Back",
+          },
+          Object {
+            "relatedFilms": "Attack of the Clones",
+          },
+        ]
+      }
+      species="Droid"
+    />
+  </section>
+</main>
+`;
