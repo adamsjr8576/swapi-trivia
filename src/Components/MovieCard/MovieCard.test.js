@@ -27,5 +27,10 @@ describe('MovieCard', () => {
     expect(wrapper).toMatchSnapshot()
   });
 
+  it('Should call getCharacterData when the button is clicked', () => {
+    const mockEvent = { target: { title: 'Some Title II', id: 28  } };
+    wrapper.find('button').simulate('click', mockEvent)
 
+    expect(mockGetCharacterData).toHaveBeenCalledWith(28)
+  });
 })
