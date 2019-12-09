@@ -5,7 +5,8 @@ import Login from '../Login/Login.js';
 import MovieContainer from '../MovieContainer/MovieContainer.js';
 import Error from '../Error/Error.js';
 import CharacterContainer from '../CharacterContainer/CharacterContainer.js';
-import Loading from '../Loading/Loading.js'
+import Loading from '../Loading/Loading.js';
+import FavoritesContainer from '../FavoritesContainer/FavoritesContainer.js';
 import { Route } from 'react-router-dom';
 
 
@@ -16,6 +17,7 @@ class App extends Component {
     this.state = {
       display: [],
       characters: [],
+      favorites: [],
       userInfo: {},
       isLoading: true,
       hasError: true
@@ -43,6 +45,12 @@ class App extends Component {
 
   resetCharacters = () => {
     this.setState({ characters: [] })
+  }
+
+  handleFavorites = (favorite) => {
+    const { favorites } = this.state;
+    const filteredFavorites = favorites.filter(character => character.character !== favorite.character);
+    favorites.filter(character => character.character === favorite.character).length > 0 ? this.setState({ favorites: filteredFavorites }) : this.setState({ favorites: [...this.state.favorites, favorite] });
   }
 
   getCharacterData = (id) => {
@@ -120,14 +128,16 @@ class App extends Component {
   }
 
   render() {
+    const {display, characters, favorites, userInfo, isLoading, hasError} = this.state;
     return (
       <div className='page-container'>
           <Route path='/movies' render={ () =>
-            !this.state.hasError &&
+            !hasError &&
               <Nav
-                userInfo={this.state.userInfo}
+                userInfo={userInfo}
                 handleLoginError={this.handleLoginError}
                 resetUserInfo={this.resetUserInfo}
+                favorites={favorites}
               />
             }/>
           <Route exact path='/' render={ () =>
@@ -137,27 +147,45 @@ class App extends Component {
               />
             }/>
           <Route exact path='/movies' render={ () =>
-            {if (this.state.hasError) {
+            {if (hasError) {
               return <Error />
-             } else if (this.state.isLoading ) {
+             } else if (isLoading ) {
               return <Loading />
             } else {
              return <MovieContainer
                getCharacterData={this.getCharacterData}
-               movieCards={this.state.display}
+               movieCards={display}
              />
            }}
           }/>
           <Route path='/movies/:movies_id' render={ () => {
-            return(
-              this.state.characters.length ?
+            return (
+              characters.length ?
                <CharacterContainer
-                characters={this.state.characters}
+                characters={characters}
                 resetCharacters={this.resetCharacters}
+                handleFavorites={this.handleFavorites}
               /> :
               <Loading />
-            )
+            );
           }} />
+          <Route path='/favorites' render={ () => {
+            return (
+              <>
+                <Nav
+                  userInfo={userInfo}
+                  handleLoginError={this.handleLoginError}
+                  resetUserInfo={this.resetUserInfo}
+                  favorites={favorites}
+                />
+                <FavoritesContainer
+                  favorites={favorites}
+                  handleFavorites={this.handleFavorites}
+                  resetCharacters={this.resetCharacters}
+                />
+              </>
+            )
+          }}/>
       </div>
     );
   }

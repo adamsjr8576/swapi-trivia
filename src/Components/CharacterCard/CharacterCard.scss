@@ -12,5 +12,48 @@
   opacity: .9;
   width: 30%;
   min-width: 400px;
-  overflow: auto;
+}
+
+.favorites-img {
+  height: 30px;
+  width: 30px;
+}
+
+.favorites-img:hover {
+  transform: scale(1.1);
+}
+
+.favorites-img:active {
+  transform: scale(.9);
+}
+
+.button-favorites {
+  background-color: black;
+  opacity: .9;
+  border: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.header-character {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-character {
+  display: flex;
+  height: 325px;
+  align-items: center;
+  overflow: scroll;
+}
+
+.h2-character {
+  width: 100%;
+  text-align: center;
 }

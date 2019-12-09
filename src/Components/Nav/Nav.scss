@@ -13,16 +13,31 @@ nav {
   opacity: .85;
 }
 
+.favorites-link {
+  width: 100%;
+  text-decoration: none;
+}
+
+.nav-favorites-img {
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+}
+
 .btn-favorites {
   opacity: .8;
-  width: 13%;
+  width: 100%;
   padding: 5px;
   border-radius: 10px;
   background-color: black;
   color: white;
   font-size: 1.5em;
+  margin-bottom: 5px;
   outline: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-favorites:hover {
@@ -63,6 +78,14 @@ nav {
   transition: width 3s;
 }
 
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 15%;
+}
+
 .user-inner:hover {
   width: 500px;
 }
@@ -72,7 +95,7 @@ nav {
 }
 
 .link-logout {
-  width: 13%;
+  width: 100%;
 }
 
 span {

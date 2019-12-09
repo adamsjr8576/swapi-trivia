@@ -25,12 +25,13 @@
 .link-back-movies {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .button-movies {
-  width: 15%;
+  width: 14.5%;
   margin-top: 15px;
+  margin-right: 10px;
   font-size: 1em;
   padding: 5px;
   border-radius: 10px;

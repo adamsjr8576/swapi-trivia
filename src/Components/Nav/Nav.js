@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Nav.scss';
 import images from '../.././images/images.js'
 
-const Nav = ({ userInfo, handleLoginError, resetUserInfo }) => {
+const Nav = ({ userInfo, handleLoginError, resetUserInfo, favorites }) => {
   return (
     <nav>
       <div className='user-info'>
@@ -14,11 +14,15 @@ const Nav = ({ userInfo, handleLoginError, resetUserInfo }) => {
           <p className='user-p'><span>Skill: </span>{userInfo.skillLevel}</p>
         </div>
       </div>
-      <img src={images.starWarsLogo} alt="star wars logo" className="nav-logo" />
-      <button className='btn-favorites'>Favorites</button>
-      <Link to='/' className="link-logout">
-        <button className='btn-logout' onClick={() => {resetUserInfo(); handleLoginError(false)}}>Logout</button>
-      </Link>
+      <img src={images.starWarsLogo} alt='star wars logo' className='nav-logo' />
+      <div className="nav-buttons">
+        <Link to='/favorites' className='favorites-link'>
+          <button className='btn-favorites'><img src={images.heart} className='nav-favorites-img' alt='heart icon' /> Favorites: {favorites.length}</button>
+        </Link>
+        <Link to='/' className='link-logout'>
+          <button className='btn-logout' onClick={() => {resetUserInfo(); handleLoginError(false)}}>Logout</button>
+        </Link>
+      </div>
     </nav>
   )
 }
