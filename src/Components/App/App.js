@@ -36,15 +36,15 @@ class App extends Component {
   }
 
   resetUserInfo = () => {
-    this.setState({  hasError: true, userInfo: {}, characters: [], })
+    this.setState({ hasError: true, userInfo: {}, characters: [], favorites: [] });
   }
 
   handleUserInfo = (info) => {
-    this.setState({ userInfo: info })
+    this.setState({ userInfo: info });
   }
 
   resetCharacters = () => {
-    this.setState({ characters: [] })
+    this.setState({ characters: [] });
   }
 
   handleFavorites = (favorite) => {

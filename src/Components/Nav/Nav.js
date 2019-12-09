@@ -7,7 +7,7 @@ const Nav = ({ userInfo, handleLoginError, resetUserInfo, favorites }) => {
   return (
     <nav>
       <div className='user-info'>
-        <div className='user-inner' tabindex='0'>
+        <div className='user-inner' tabIndex='0'>
           <img src={images.falcon} className='i-p' />
           <p className='user-p'><span>Name: </span>{userInfo.name}</p>
           <p className='user-p'><span>Quote: </span>{userInfo.quote}</p>

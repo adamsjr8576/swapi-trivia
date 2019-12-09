@@ -9,11 +9,20 @@ exports[`Error Should match the snapshot with data passed in 1`] = `
   >
     Error!!
   </h3>
-  <p
-    className="p-error"
+  <div
+    className="p-error-container"
   >
-    Please fill out all fields before logging in.
-  </p>
+    <p
+      className="p-error"
+    >
+      *All fields must be filled out to login*
+    </p>
+    <p
+      className="p-error"
+    >
+      *Please return to login*
+    </p>
+  </div>
   <img
     alt="Gif of small bird scared"
     className="gif-error"
