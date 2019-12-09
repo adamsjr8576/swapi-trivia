@@ -33,17 +33,27 @@ describe('Nav', () => {
         favorites={mockFavorites}
       />
     )
-  })
+  });
 
   it('Should match the snapshot with data passed in', () => {
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('Should call handleLoginError when button is clicked', () => {
-    wrapper.find('.btn-logout').simulate('click')
+    wrapper.find('.btn-logout').simulate('click');
 
-    expect(mockHandleLoginError).toHaveBeenCalled()
+    expect(mockHandleLoginError).toHaveBeenCalledWith(false);
   });
 
+  it('Should call handleLoginError when button is clicked', () => {
+    wrapper.find('.btn-logout').simulate('click');
 
-})
+    expect(mockResetUserInfo).toHaveBeenCalledWith();
+  });
+
+  it('Should call resetUserInfo when button is clicked', () => {
+    wrapper.find('.btn-logout').simulate('click');
+
+    expect(mockResetUserInfo).toHaveBeenCalled();
+  });
+});
