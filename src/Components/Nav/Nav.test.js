@@ -14,7 +14,7 @@ describe('Nav', () => {
     };
     mockHandleLoginError = jest.fn();
     mockResetUserInfo = jest.fn();
-    favorites = {
+    mockFavorites = {
         character: "C-3PO",
         creature: "artificial",
         name: "Tatooine",
@@ -35,7 +35,15 @@ describe('Nav', () => {
     )
   })
 
+  it('Should match the snapshot with data passed in', () => {
+    expect(wrapper).toMatchSnapshot()
+  });
 
+  it('Should call handleLoginError when button is clicked', () => {
+    wrapper.find('.btn-logout').simulate('click')
+
+    expect(mockHandleLoginError).toHaveBeenCalled()
+  });
 
 
 })
