@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
-import images from '../.././images/images.js'
-
+import images from '../.././images/images.js';
+import PropTypes from 'prop-types';
 
 class Login extends Component {
   constructor(props) {
