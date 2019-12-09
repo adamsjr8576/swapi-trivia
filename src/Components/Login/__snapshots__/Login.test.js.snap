@@ -18,7 +18,7 @@ exports[`Login Should match the snapshot with data passed in 1`] = `
       Please Login
     </h2>
     <input
-      className="input-login"
+      className="input-login input-login-name"
       maxLength="25"
       name="name"
       onChange={[Function]}
@@ -27,7 +27,7 @@ exports[`Login Should match the snapshot with data passed in 1`] = `
       value=""
     />
     <input
-      className="input-login"
+      className="input-login input-login-quote"
       maxLength="65"
       name="quote"
       onChange={[Function]}
@@ -44,7 +44,7 @@ exports[`Login Should match the snapshot with data passed in 1`] = `
         Skill Level:
       </label>
       <select
-        className="input-select"
+        className="input-select input-login-skill"
         id="skill"
         name="skillLevel"
         onChange={[Function]}
