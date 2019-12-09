@@ -109,14 +109,10 @@ span {
   height: 70px;
   margin: 15px 10px;
   cursor: pointer;
-  animation: rotating 7s linear infinite;
+  transition: transform 20s linear;
 }
 
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.i-p:hover {
+  transition: transform 50s linear;
+  transform: rotate(3600deg);
 }
