@@ -14,7 +14,8 @@ describe('MovieCard', () => {
         release_date:'2020-05-22',
         id: 28
       };
-    wrapper = shallow(<MovieCard 
+    wrapper = shallow(
+      <MovieCard 
         title={mockMovie.title}
         episode_id={mockMovie.episode_id}
         release_date={mockMovie.release_date}
