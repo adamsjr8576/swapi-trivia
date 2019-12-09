@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './FavoritesContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard.js';
+import PropTypes from 'prop-types';
 
 
 const FavoritesContainer = ({ favorites, handleFavorites, resetCharacters }) => {
@@ -18,7 +19,7 @@ const FavoritesContainer = ({ favorites, handleFavorites, resetCharacters }) => 
     favorites.length > 0 ?
     <main className="character-container">
       <Link to="/movies" className="link-back-movies">
-        <button className="button-movies" onClick={() => resetCharacters()}>Return to Movies</button>
+        <button className="button-movies button1" onClick={() => resetCharacters()}>Return to Movies</button>
       </Link>
       <section className="section-character-container">
         {favoriteCards}
@@ -27,7 +28,7 @@ const FavoritesContainer = ({ favorites, handleFavorites, resetCharacters }) => 
     :
     <>
       <Link to="/movies" className="link-back-movies">
-        <button className="button-movies" onClick={() => resetCharacters()}>Return to Movies</button>
+        <button className="button-movies button2" onClick={() => resetCharacters()}>Return to Movies</button>
       </Link>
       <h4>Find a Favorite Character!!!</h4>
     </>
@@ -35,3 +36,9 @@ const FavoritesContainer = ({ favorites, handleFavorites, resetCharacters }) => 
 }
 
 export default FavoritesContainer;
+
+FavoritesContainer.propTypes = {
+  favorites: PropTypes.arrayOf(PropTypes.object),
+  handleFavorites: PropTypes.func,
+  resetCharacters: PropTypes.func
+}

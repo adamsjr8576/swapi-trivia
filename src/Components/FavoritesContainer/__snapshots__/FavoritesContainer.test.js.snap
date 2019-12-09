@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CharacterContainer Should match the snapshot with all the proper data passed in 1`] = `
+exports[`FavoritesContainer Should match the snapshot with all data 1`] = `
 <main
   className="character-container"
 >
@@ -9,23 +9,19 @@ exports[`CharacterContainer Should match the snapshot with all the proper data p
     to="/movies"
   >
     <button
-      className="button-movies"
+      className="button-movies button1"
       onClick={[Function]}
     >
       Return to Movies
     </button>
   </Link>
-  <p
-    className="opening-crawl"
-  >
-    the guardians of
-  </p>
   <section
     className="section-character-container"
   >
     <CharacterCard
       character="C-3PO"
       creature="artificial"
+      handleFavorites={[MockFunction]}
       key="C-3PO"
       name="Tatooine"
       openingCrawl="the guardians of"
@@ -45,6 +41,7 @@ exports[`CharacterContainer Should match the snapshot with all the proper data p
     <CharacterCard
       character="R2-D2"
       creature="artificial"
+      handleFavorites={[MockFunction]}
       key="R2-D2"
       name="Naboo"
       openingCrawl="Turmoil has engulfed"

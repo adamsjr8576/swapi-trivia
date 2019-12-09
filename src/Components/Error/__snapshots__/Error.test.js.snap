@@ -1,3 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Error Should match the snapshot with data passed in 1`] = `ShallowWrapper {}`;
+exports[`Error Should match the snapshot with data passed in 1`] = `
+<section
+  className="section-error"
+>
+  <h3
+    className="header-error"
+  >
+    Error!!
+  </h3>
+  <p
+    className="p-error"
+  >
+    Please fill out all fields before logging in.
+  </p>
+  <img
+    alt="Gif of small bird scared"
+    className="gif-error"
+    src="giphy.gif"
+  />
+  <Link
+    className="link-error"
+    to="/"
+  >
+    <button
+      className="button-error"
+    >
+      Back To Login
+    </button>
+  </Link>
+</section>
+`;
