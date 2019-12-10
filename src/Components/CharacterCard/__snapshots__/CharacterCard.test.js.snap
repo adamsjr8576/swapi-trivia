@@ -7,7 +7,9 @@ exports[`CharacterCard Should match the snapshot with data passed in 1`] = `
   <header
     className="header-character"
   >
-    <h2>
+    <h2
+      className="h2-character-header"
+    >
       C-3PO
     </h2>
     <button
@@ -27,35 +29,55 @@ exports[`CharacterCard Should match the snapshot with data passed in 1`] = `
     <h2
       className="h2-character"
     >
+      Species: 
       Droid
     </h2>
     <h2
       className="h2-character"
     >
+      Creature: 
       artificial
     </h2>
     <h2
       className="h2-character"
     >
+      Name: 
       Tatooine
     </h2>
     <h2
-      className="h2-character"
+      className="h2-character-population"
     >
+      Population: 
       200000
     </h2>
     <h2
-      className="h2-character"
+      className="h2-films"
+    >
+      Films: 
+    </h2>
+    <p
+      className="h2-relatedFilm"
       key="0"
     >
       The Empire Strikes Back
-    </h2>
-    <h2
-      className="h2-character"
+    </p>
+    <p
+      className="h2-relatedFilm"
       key="1"
     >
       Attack of the Clones
-    </h2>
+    </p>
   </section>
+  <Link
+    className="link-back-movies"
+    to="/movies"
+  >
+    <button
+      className="button-movies"
+      onClick={[Function]}
+    >
+      Return to Movies
+    </button>
+  </Link>
 </article>
 `;

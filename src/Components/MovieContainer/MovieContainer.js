@@ -10,7 +10,7 @@ const MovieContainer = ({ movieCards, getCharacterData }) => {
     return posterTitle === card.title
   })
     return(
-      <MovieCard 
+      <MovieCard
         title={card.title}
         episode_id={card.episode_id}
         release_date={card.release_date}
@@ -21,7 +21,7 @@ const MovieContainer = ({ movieCards, getCharacterData }) => {
     );
   });
   return(
-    <section>
+    <section className='movie-container-section'>
       {movies}
     </section>
   );

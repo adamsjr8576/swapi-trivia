@@ -27,7 +27,7 @@ class App extends Component {
 
   componentDidMount = () => {
     getAllMovies()
-      .then(data => this.setState({ display: data.results }))
+      .then(data => this.setState({ display: data }))
       .then(data => this.setState({ isLoading: false }))
   }
 
@@ -61,7 +61,7 @@ class App extends Component {
   }
 
   handleCharacterFetch = (movies, id) => {
-    let movieData = movies.results.filter(movie => movie.episode_id === Number(id));
+    let movieData = movies.filter(movie => movie.episode_id === Number(id));
     let firstTenCharacters = movieData[0].characters.slice(0, 10);
     const promises = firstTenCharacters.map(character => {
       return getCharacter(character)
@@ -123,6 +123,7 @@ class App extends Component {
                 handleLoginError={this.handleLoginError}
                 resetUserInfo={this.resetUserInfo}
                 favorites={favorites}
+                isLoading={isLoading}
               />
             }/>
           <Route exact path='/' render={ () =>

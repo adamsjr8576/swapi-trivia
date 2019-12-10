@@ -17,24 +17,27 @@ exports[`Nav Should match the snapshot with data passed in 1`] = `
         className="user-p"
       >
         <span>
-          Name: 
+          Name:
         </span>
+           
         Patrick
       </p>
       <p
         className="user-p"
       >
         <span>
-          Quote: 
+          Quote:
         </span>
+           
         Sick wiggy
       </p>
       <p
         className="user-p"
       >
         <span>
-          Skill: 
+          Skill:
         </span>
+           
         Jedi Master
       </p>
     </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import './CharacterContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard.js';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const CharacterContainer = ({ characters, resetCharacters, handleFavorites }) => {
@@ -11,20 +10,17 @@ const CharacterContainer = ({ characters, resetCharacters, handleFavorites }) =>
         {...character}
         handleFavorites={handleFavorites}
         key={character.character}
+        resetCharacters={resetCharacters}
       />
     )
   });
   return(
     <main className='character-container'>
-      <Link to='/movies' className='link-back-movies'>
-        <button className='button-movies' onClick={() => resetCharacters()}>Return to Movies</button>
-      </Link>
-      <section className='starwars-scroll'>
       <div className="fade"></div>
+      <section className='starwars-scroll'>
         <div className='scroll-window'>
           <div className='scroll-content'>
             <p className='title'>STAR WARS</p>
-            <p className='subtitle'></p>
           </div>
             <p className='scroll-p'>{characters[0].openingCrawl}</p>
         </div>

@@ -12,6 +12,7 @@ const FavoritesContainer = ({ favorites, handleFavorites, resetCharacters }) => 
         {...character}
         key={character.character}
         handleFavorites={handleFavorites}
+        resetCharacters={resetCharacters}
       />
     )
   });
