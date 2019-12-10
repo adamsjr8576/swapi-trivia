@@ -2,13 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import App from '../App/App.js';
+import { getAllMovies } from '../../apiCalls.js';
+
+jest.mock('../../apiCalls.js');
 
 describe('App', () => {
 
-  let wrapper;
+  let wrapper, mockFilms;
 
   beforeEach(() => {
     wrapper = shallow(<App />);
+
+    mockFilms = [{
+      title: ''
+    }]
+
+    getAllMovies.mockImplementation(() => {
+      return Promise.resolve([{
+
+      }])
+    })
   })
 
   it('Should match the snapshot with all data', () => {
@@ -142,5 +155,5 @@ describe('App', () => {
 
     wrapper.instance().handleFavorites(mockFavorite2);
     expect(wrapper.state('favorites')).toEqual([]);
-  })
+  });
 });

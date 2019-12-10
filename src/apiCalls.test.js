@@ -57,7 +57,7 @@ describe('getAllMovies', () => {
         return Promise.resolve({
           ok: false,
         })
-      }); 
+      });
 
       expect(getAllMovies()).rejects.toEqual(Error('Error fetching movies'))
     });
@@ -135,7 +135,7 @@ describe('getCharacterHomeworld', () => {
         return Promise.resolve({
           ok: false,
         })
-      }); 
+      });
 
       expect(getCharacterHomeworld(url)).rejects.toEqual(Error('Error fetching homeworld'))
     });
@@ -212,11 +212,10 @@ describe('getCharacterSpecies', () => {
   let cleanedMockdata = {
     species: mockResponse.name,
     creature: mockResponse.classification,
-    character: "Human"
+    character: undefined
   }
 
   beforeEach(() => {
-
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
@@ -242,9 +241,126 @@ describe('getCharacterSpecies', () => {
       return Promise.resolve({
         ok: false,
       })
-    }); 
+    });
 
     expect(getCharacterSpecies(url)).rejects.toEqual(Error('Error fetching species'))
   });
 
+});
+
+describe('getCharacterRelatedFilm', () => {
+  let mockResponse = {
+    title: "The Empire Strikes Back",
+    episode_id: 5,
+    opening_crawl: "It is a dark time for the\r\nRebellion. Although the Death\r\nStar has been destroyed,\r\nImperial troops have driven the\r\nRebel forces from their hidden\r\nbase and pursued them across\r\nthe galaxy.\r\n\r\nEvading the dreaded Imperial\r\nStarfleet, a group of freedom\r\nfighters led by Luke Skywalker\r\nhas established a new secret\r\nbase on the remote ice world\r\nof Hoth.\r\n\r\nThe evil lord Darth Vader,\r\nobsessed with finding young\r\nSkywalker, has dispatched\r\nthousands of remote probes into\r\nthe far reaches of space....",
+    director: "Irvin Kershner",
+    producer: "Gary Kurtz, Rick McCallum",
+    release_date: "1980-05-17",
+    created: "2014-12-12T11:26:24.656000Z",
+    edited: "2017-04-19T10:57:29.544256Z",
+    url: "https://swapi.co/api/films/2/"
+  }
+
+  let url = 'https://swapi.co/api/films/2/';
+
+  let cleanedMockdata = {
+    relatedFilms: mockResponse.title
+  }
+
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => {
+          return Promise.resolve(mockResponse)
+        }
+      });
+    });
+  });
+
+  it('Should call fetch with the correct URL', () => {
+    getCharacterRelatedFilm(url);
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  });
+
+  it('Should return a new object', () => {
+    expect(getCharacterRelatedFilm(url)).resolves.toEqual(cleanedMockdata);
+  });
+
+  it('Should return an error if the response fails', () => {
+    window.fetch =jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      });
+    });
+    expect(getCharacterRelatedFilm(url)).rejects.toEqual(Error('Error fetching films'));
+  });
+});
+
+describe('getCharacter', () => {
+  let mockResponse = {
+    "name": "Luke Skywalker",
+    "height": "172",
+    "mass": "77",
+    "hair_color": "blond",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "19BBY",
+    "gender": "male",
+    "homeworld": "https://swapi.co/api/planets/1/",
+    "films": [
+        "https://swapi.co/api/films/2/",
+        "https://swapi.co/api/films/6/",
+        "https://swapi.co/api/films/3/",
+        "https://swapi.co/api/films/1/",
+        "https://swapi.co/api/films/7/"
+    ],
+    "species": [
+        "https://swapi.co/api/species/1/"
+    ],
+    "vehicles": [
+        "https://swapi.co/api/vehicles/14/",
+        "https://swapi.co/api/vehicles/30/"
+    ],
+    "starships": [
+        "https://swapi.co/api/starships/12/",
+        "https://swapi.co/api/starships/22/"
+    ],
+    "created": "2014-12-09T13:50:51.644000Z",
+    "edited": "2014-12-20T21:17:56.891000Z",
+    "url": "https://swapi.co/api/people/1/"
+  }
+
+  let url = 'https://swapi.co/api/people/1/';
+
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => {
+          return Promise.resolve(mockResponse)
+        }
+      })
+    });
+  });
+
+  it('Should call fetch with the correct URL', () => {
+    getCharacter(url);
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  });
+
+  it('Should return a new object', () => {
+    expect(getCharacter(url)).resolves.toEqual(mockResponse);
+  });
+
+  it('Should return an error if the response fails', () => {
+    window.fetch =jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      });
+    });
+    expect(getCharacter(url)).rejects.toEqual(Error('Error fetching character'));
+  });
 });
