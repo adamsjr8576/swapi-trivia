@@ -11,4 +11,12 @@
   opacity: .9;
   width: 30%;
   min-width: 400px;
-}
+    &>.movie-card-title {
+      font-size: 1.5em;
+      color: indianred;
+      border-bottom: solid 1px;
+    }
+  }
+
+
+

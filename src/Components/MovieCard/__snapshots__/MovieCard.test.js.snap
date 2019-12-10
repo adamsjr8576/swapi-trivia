@@ -4,27 +4,37 @@ exports[`MovieCard Should match the snapshot with data passed in 1`] = `
 <article
   className="article-movie"
 >
-  <h4>
+  <h4
+    className="movie-card-title"
+  >
     Some Movie Title
   </h4>
-  <h4>
-    Episode: 
-    28
-  </h4>
-  <h4>
-    Released: 
-    2020-05-22
-  </h4>
-  <Link
-    to="/movies/:28"
+  <div
+    className="movie-card-div"
   >
-    <button
-      className="btn-characters"
-      id={28}
-      onClick={[Function]}
+    <img
+      alt="movie poster"
+      className="poster"
+    />
+    <h4>
+      Episode: 
+      28
+    </h4>
+    <h4>
+      Released: 
+      2020-05-22
+    </h4>
+    <Link
+      to="/movies/:28"
     >
-      View Characters
-    </button>
-  </Link>
+      <button
+        className="btn-characters"
+        id={28}
+        onClick={[Function]}
+      >
+        View Characters
+      </button>
+    </Link>
+  </div>
 </article>
 `;
