@@ -24,7 +24,12 @@ export const getCharacterHomeworld = (character) => {
 
 export const getCharacterSpecies = (character) => {
   return fetch(character.species)
-  .then(response => res.json())
+  .then(response => {
+    if(!response.ok) {
+      throw Error('Error fetching species')
+    }
+    return response.json()
+  })
   .then(data => ({
     species: data.name,
     creature: data.classification,
@@ -34,11 +39,11 @@ export const getCharacterSpecies = (character) => {
 
 export const getCharacterRelatedFilm = (film) => {
   return fetch(film)
-  .then(response => res.json())
+  .then(response => response.json())
   .then(data => ({relatedFilms: data.title}))
 }
 
 export const getCharacter = (character) => {
   return fetch(character)
-  .then(response => res.json())
+  .then(response => response.json())
 }
