@@ -26,14 +26,14 @@ const FavoritesContainer = ({ favorites, handleFavorites, resetCharacters }) => 
       </section>
     </main>
     :
-    <>
+    <main className='no-favorites-main'>
       <Link to='/movies' className='link-back-movies'>
         <button className='button-movies button2' onClick={() => resetCharacters()}>Return to Movies</button>
       </Link>
       <section className='no-favorites-section'>
         <p className='no-favorites-header'>Choose Some Favorite Characters!!!</p>
       </section>
-    </>
+    </main>
   );
 }
 

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: nowrap;
   height: 100vh
 }
 
@@ -12,15 +13,20 @@
 }
 
 .p-error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin: 5px;
   font-size: 1.5em;
   padding: 10px;
-  border: indianred 5px solid;
+  border: indianred 10px solid;
   background-color: black;
   color: white;
   border-radius: 10px;
   opacity: .9;
+  width: 350px;
+  height: 575px;
 }
 
 .p-error {
@@ -29,7 +35,7 @@
 
 .gif-error {
   height: 350px;
-  width: 300px;
+  width: 350px;
   opacity: 1;
   padding: 15px;
   border: indianred 3px solid;
@@ -45,7 +51,7 @@
 }
 
 .button-error {
-  margin-top: 10px;
+  margin: 10px;
   width: 20%;
   font-size: 1em;
   padding: 10px;

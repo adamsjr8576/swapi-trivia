@@ -4,9 +4,12 @@ import images from '../.././images/images.js';
 
 const Loading = () => {
   return (
-    <section className='loading-gif-container'>
-      <img className='loading-gif' src={images.rider} alt='Gif of space rider' />
-    </section>
+    <main className="loading-container">
+      <h1>Loading...</h1>
+      <section className='loading-gif-container'>
+        <img className='loading-racer-gif' src={images.rider} alt='Gif of space rider' />
+      </section>
+    </main>
   )
 }
 

@@ -1,5 +1,5 @@
 import starWarsLogo from './starwarslogo.png';
-import errorGif from './giphy.gif';
+import errorGif from './errorGif.gif';
 import falcon from './falcon.png';
 import rider from './rider.gif';
 import heart from './lover.png';
@@ -10,7 +10,7 @@ import IV from './Star-Wars-Episode-IV-A-New-Hope.jpg';
 import V from './Star-Wars-Episode-V-The-Empire-Strikes-Back.jpg';
 import VI from './Star-Wars-Episode-VI-Return-Of-The-Jedi.jpg';
 import VII from './Star-Wars-Episode-VII-The-Force-Awakens.jpg';
-
+import nightSky from './nightsky.gif';
 
 
 const images = {
@@ -27,7 +27,8 @@ const images = {
     'The Empire Strikes Back': V,
     'Return of the Jedi': VI,
     'The Force Awakens': VII
-  }
+  },
+  nightSky: nightSky
 }
 
 export default images

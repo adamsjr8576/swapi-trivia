@@ -38,7 +38,6 @@ form {
   border-radius: 10px;
   border: 0;
   outline: none;
-  cursor: pointer;
 }
 
 .btn-login {
@@ -79,9 +78,16 @@ form {
   width: 65%;
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 
 label {
   color: white;
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  form {
+    width: 85%;
+  }
 }
