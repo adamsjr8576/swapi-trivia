@@ -36,5 +36,5 @@ Nav.propTypes = {
   userInfo: PropTypes.object,
   handleLoginError: PropTypes.func,
   resetUserInfo: PropTypes.func,
-  favorites: PropTypes.object
+  favorites: PropTypes.array
 }

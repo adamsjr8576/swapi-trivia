@@ -8,6 +8,7 @@ import CharacterContainer from '../CharacterContainer/CharacterContainer.js';
 import Loading from '../Loading/Loading.js';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer.js';
 import { Route } from 'react-router-dom';
+import { getAllMovies, getCharacterHomeworld, getCharacterSpecies, getCharacterRelatedFilm, getCharacter } from '../../apiCalls.js';
 
 
 
@@ -25,8 +26,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://swapi.co/api/films/')
-      .then(res => res.json())
+    getAllMovies()
       .then(data => this.setState({ display: data.results }))
       .then(data => this.setState({ isLoading: false }))
   }
@@ -55,8 +55,7 @@ class App extends Component {
 
   getCharacterData = (id) => {
     this.setState({ isLoading: true })
-    fetch('https://swapi.co/api/films/')
-    .then(res => res.json())
+    getAllMovies()
     .then(data => this.handleCharacterFetch(data, id))
     .then(characterData => this.setState({ characters: characterData, isLoading: false }))
   }
@@ -65,8 +64,7 @@ class App extends Component {
     let movieData = movies.results.filter(movie => movie.episode_id === Number(id));
     let firstTenCharacters = movieData[0].characters.slice(0, 10);
     const promises = firstTenCharacters.map(character => {
-      return fetch(character)
-      .then(res => res.json())
+      return getCharacter(character)
       .then(data => this.handleCharacterInfo(data))
       .then(data => {
         let object1 = data[0];
@@ -98,31 +96,18 @@ class App extends Component {
   }
 
   handleCharacterHomeworld = (character) => {
-    return fetch(character.homeworld)
-     .then(res => res.json())
-     .then(data => ({
-      name: data.name,
-      population: data.population
-      }))
+    return getCharacterHomeworld(character)
       .catch(err => console.log(err));
   }
 
   handleCharacterSpecies = (character) => {
-    return fetch(character.species)
-    .then(res => res.json())
-    .then(data => ({
-      species: data.name,
-      creature: data.classification,
-      character: character.name
-    }))
+    return getCharacterSpecies(character)
     .catch(err => console.log(err));
   }
 
   handleCharacterRelatedFilm = (character) => {
     return character.films.map(film => {
-      return fetch(film)
-      .then(res => res.json())
-      .then(data => ({relatedFilms: data.title}))
+      return getCharacterRelatedFilm(film)
       .catch(err => console.log(err));
     });
   }
