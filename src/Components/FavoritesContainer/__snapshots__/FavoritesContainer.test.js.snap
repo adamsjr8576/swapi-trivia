@@ -36,6 +36,7 @@ exports[`FavoritesContainer Should match the snapshot with all data 1`] = `
           },
         ]
       }
+      resetCharacters={[MockFunction]}
       species="Droid"
     />
     <CharacterCard
@@ -56,6 +57,7 @@ exports[`FavoritesContainer Should match the snapshot with all data 1`] = `
           },
         ]
       }
+      resetCharacters={[MockFunction]}
       species="Droid"
     />
   </section>

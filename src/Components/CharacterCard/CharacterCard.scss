@@ -57,19 +57,31 @@
 
 .section-character {
   display: flex;
-  height: 325px;
+  flex-direction: column;
   align-items: center;
+  height: 325px;
   overflow: scroll;
+  width: 80%;
 }
 
 .h2-character {
   font-size: 1em;
   width: 100%;
-  margin: 0 auto;
+  margin: 5px auto;
+  text-align: center;
+}
+
+.h2-relatedFilm {
+  font-size: 1em;
+  width: 50%;
+  margin: 5px auto;
   text-align: center;
 }
 
 .h2-films {
+  width: 25%;
+  text-align: center;
+  border-bottom: 1px solid white;
   font-size: .8em;
   margin-top: 0;
 }
@@ -82,3 +94,30 @@
   border-bottom: solid 1px white;
 }
 
+.link-back-movies {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.button-movies {
+  min-width: 150px;
+  width: 14.5%;
+  margin-top: 15px;
+  margin-right: 10px;
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  opacity: .9;
+}
+
+.button-movies:hover {
+  background-color: white;
+  color: black;
+}

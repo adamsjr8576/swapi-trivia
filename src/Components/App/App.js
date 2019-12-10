@@ -123,6 +123,7 @@ class App extends Component {
                 handleLoginError={this.handleLoginError}
                 resetUserInfo={this.resetUserInfo}
                 favorites={favorites}
+                isLoading={isLoading}
               />
             }/>
           <Route exact path='/' render={ () =>

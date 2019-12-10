@@ -39,8 +39,4 @@ describe('CharacterContainer', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call resetCharacters on click', () => {
-    wrapper.find('.button-movies').simulate('click');
-    expect(resetCharactersMock).toHaveBeenCalled();
-  })
 });

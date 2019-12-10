@@ -54,19 +54,30 @@ exports[`CharacterCard Should match the snapshot with data passed in 1`] = `
       className="h2-films"
     >
       Films: 
-      <h2
-        className="h2-character"
-        key="0"
-      >
-        The Empire Strikes Back
-      </h2>
-      <h2
-        className="h2-character"
-        key="1"
-      >
-        Attack of the Clones
-      </h2>
     </h2>
+    <p
+      className="h2-relatedFilm"
+      key="0"
+    >
+      The Empire Strikes Back
+    </p>
+    <p
+      className="h2-relatedFilm"
+      key="1"
+    >
+      Attack of the Clones
+    </p>
   </section>
+  <Link
+    className="link-back-movies"
+    to="/movies"
+  >
+    <button
+      className="button-movies"
+      onClick={[Function]}
+    >
+      Return to Movies
+    </button>
+  </Link>
 </article>
 `;
