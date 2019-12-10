@@ -1,9 +1,8 @@
-
 export const getAllMovies = () => {
   return fetch('https://swapi.co/api/films/')
   .then(response => {
     if(!response.ok) {
-      throw Error('Error fetchings movies')
+      throw Error('Error fetching movies')
     }
     return response.json()
   })
@@ -11,7 +10,12 @@ export const getAllMovies = () => {
 
 export const getCharacterHomeworld = (character) => {
   return fetch(character.homeworld)
-  .then(res => res.json())
+  .then(response => {
+    if(!response.ok) {
+      throw Error('Error fetching homeworld')
+    }
+    return response.json()
+  })
   .then(data => ({
     name: data.name,
     population: data.population
@@ -20,7 +24,7 @@ export const getCharacterHomeworld = (character) => {
 
 export const getCharacterSpecies = (character) => {
   return fetch(character.species)
-  .then(res => res.json())
+  .then(response => res.json())
   .then(data => ({
     species: data.name,
     creature: data.classification,
@@ -30,6 +34,11 @@ export const getCharacterSpecies = (character) => {
 
 export const getCharacterRelatedFilm = (film) => {
   return fetch(film)
-  .then(res => res.json())
+  .then(response => res.json())
   .then(data => ({relatedFilms: data.title}))
+}
+
+export const getCharacter = (character) => {
+  return fetch(character)
+  .then(response => res.json())
 }

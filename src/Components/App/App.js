@@ -8,7 +8,7 @@ import CharacterContainer from '../CharacterContainer/CharacterContainer.js';
 import Loading from '../Loading/Loading.js';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer.js';
 import { Route } from 'react-router-dom';
-import { getAllMovies, getCharacterHomeworld, getCharacterSpecies, getCharacterRelatedFilm } from '../../apiCalls.js';
+import { getAllMovies, getCharacterHomeworld, getCharacterSpecies, getCharacterRelatedFilm, getCharacter } from '../../apiCalls.js';
 
 
 
@@ -64,8 +64,7 @@ class App extends Component {
     let movieData = movies.results.filter(movie => movie.episode_id === Number(id));
     let firstTenCharacters = movieData[0].characters.slice(0, 10);
     const promises = firstTenCharacters.map(character => {
-      return fetch(character)
-      .then(res => res.json())
+      return getCharacter(character)
       .then(data => this.handleCharacterInfo(data))
       .then(data => {
         let object1 = data[0];
