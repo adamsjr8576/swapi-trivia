@@ -1,11 +1,19 @@
+.loading-container {
+  height: 83.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .loading-gif-container {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  height: 80.75vh;
+  height: 50vh;
 }
 
-.loading-gif {
+.loading-racer-gif {
   animation: flying 4s linear infinite;
   opacity: 1;
 }

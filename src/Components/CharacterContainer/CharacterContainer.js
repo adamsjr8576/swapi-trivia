@@ -23,8 +23,8 @@ const CharacterContainer = ({ characters, resetCharacters, handleFavorites }) =>
       <div className="fade"></div>
         <div className='scroll-window'>
           <div className='scroll-content'>
-            <p className='title'>Episode IV</p>
-            <p className='subtitle'>A New Hope</p>
+            <p className='title'>STAR WARS</p>
+            <p className='subtitle'></p>
           </div>
             <p className='scroll-p'>{characters[0].openingCrawl}</p>
         </div>
