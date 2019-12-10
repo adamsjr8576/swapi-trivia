@@ -1,10 +1,10 @@
+
 .character-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
-  height: 81vh;
+  height: 850px;
 }
 
 .opening-crawl {
@@ -15,7 +15,7 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 82vh;
+  height: 100vh;
   justify-content: space-around;
   padding: 10px;
   overflow: scroll;
@@ -46,4 +46,60 @@
 .button-movies:hover {
   background-color: white;
   color: black;
+}
+
+.starwars-scroll {
+  background-image: url('../../images/nightsky.gif');
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-height: 250px;
+  height: 250px;
+  perspective: 700px;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  text-align: justify;
+  border: 5px solid indianred;
+  border-radius: 10px;
+  margin-top: 15px;
+  width: 75%;
+  overflow: hidden;
+}
+
+.scroll-window {
+  position: relative;
+  top: 9999px;
+  transform-origin: 50% 100%;
+  animation: crawl 55s linear 1s infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-p {
+  width: 150%;
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 25vh;
+  top: -25px;
+  background-image: linear-gradient(0deg, transparent, black 95%);
+  z-index: 1;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
 }

@@ -1,10 +1,10 @@
 .page-container {
-  height: 100vh;
   background-image: url(https://external-preview.redd.it/4gQ9nVb85g1MFpaxX4D7M641Lx73OEuhbqbSQfLpYU8.jpg?auto=webp&s=f074a9b622a99d327a25d19213e4a299253ba0e7);
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 main {

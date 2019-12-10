@@ -19,7 +19,16 @@ const CharacterContainer = ({ characters, resetCharacters, handleFavorites }) =>
       <Link to='/movies' className='link-back-movies'>
         <button className='button-movies' onClick={() => resetCharacters()}>Return to Movies</button>
       </Link>
-      <p className='opening-crawl'>{characters[0].openingCrawl}</p>
+      <section className='starwars-scroll'>
+      <div className="fade"></div>
+        <div className='scroll-window'>
+          <div className='scroll-content'>
+            <p className='title'>Episode IV</p>
+            <p className='subtitle'>A New Hope</p>
+          </div>
+            <p className='scroll-p'>{characters[0].openingCrawl}</p>
+        </div>
+      </section>
       <section className='section-character-container'>
         {characterInfo}
       </section>
