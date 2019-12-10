@@ -1,4 +1,3 @@
-
 .character-card {
   border: solid 3px white;
   border-radius: 10px;
@@ -12,6 +11,11 @@
   opacity: .9;
   width: 30%;
   min-width: 400px;
+}
+
+.character-card:hover {
+  opacity: 1;
+  border: solid 3px indianred;
 }
 
 .favorites-img {
@@ -41,9 +45,14 @@
 .header-character {
   height: 50px;
   width: 100%;
+  font-size: 1.6em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  &>.h2-character-header {
+    font-size: 1em;
+    padding: 20px;
+  }
 }
 
 .section-character {
@@ -54,6 +63,22 @@
 }
 
 .h2-character {
+  font-size: 1em;
   width: 100%;
+  margin: 0 auto;
   text-align: center;
 }
+
+.h2-films {
+  font-size: .8em;
+  margin-top: 0;
+}
+
+.h2-character-population {
+  font-size: 1em;
+  width: 85%;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: solid 1px white;
+}
+
