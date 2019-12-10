@@ -2,8 +2,7 @@
 
 ### Overview:
 
-- SWAPI-trivia is an informational directory based around the Star Wars universe. A user can login with their name, favorite Star Wars quote, and chosen skill level. Providing there are no login errors the user can scroll through the list of Star Wars classics that are fetched from a third party API. A user can select a movie, upon this selection another fetch is run for the character information. There are a number of smaller API calls that make up this information. The user also has the ability to keep track of their favorite characters via the heart icon. If a user forgets their skill level they can hover over the Falcon to get their information. May the force be with you!
-
+- SWAPI-trivia is an informational directory application created over 8 days based around the Star Wars universe. A user can login with their name, favorite Star Wars quote, and chosen skill level. Providing there are no login errors the user can scroll through the list of Star Wars classics that are fetched from a third party API. A user can select a movie, upon this selection another fetch is run for the character information. There are a number of smaller API calls that make up this information. The user also has the ability to keep track of their favorite characters via the heart icon. If a user forgets their skill level they can hover over the Falcon to get their information. May the force be with you!\
 ### Setup:
 
 1) You can clone down this repo and run: `npm install`
@@ -23,6 +22,7 @@
 - Web APIs via the Fetch method
 
 ### Challenges and Wins:
-
+- Challenges: This project had a main learning goal of understanding nested fetch requests and managing response time. This was a very clear challenge having never attempted this before. We had to get familiar with breaking out our fetch requests into smaller more manageable functions. It was important for us to keep in mind when we were making our fetch calls in order not to slow down the page. 
+- Wins: We felt that we did a solid job of completing the above challenges first and foremost. Secondly to the API calls we were very proud of the styling for this application. We included the classic Star Wars text scroll and a few other micro-interactions to increase the UI/UX
 
 ### Screenshots:
