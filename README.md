@@ -6,24 +6,23 @@
 
 ### Setup:
 
-1) You can clone down this repo and run: npm install
+1) You can clone down this repo and run: `npm install`
 
-2) To verify that it is setup correctly, run `npm start` in your terminal. Go to http://localhost:8080/ and you should see a page with "Welcome to the OverLook"
+2) To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:3000/` and you should see a page asking for login information. 
 
 ### Tech Stack:
 
-React
-Javascript
-Scss / HTML
-Jest / Enzyme
-npm
-node
-Webpack
-Web APIs via the Fetch method
+- React
+- React Router
+- Javascript
+- Scss / HTML
+- Jest / Enzyme
+- npm
+- node
+- Webpack
+- Web APIs via the Fetch method
 
 ### Challenges and Wins:
 
-Challenges: There was a lot of DOM manipulation for this app and it proved hard to populate the information in an orderly fasion. Testing for DOM events was also a challenge, making sure that all the data was reaching the API correctly.
-Wins: Working with the fetch API and taking in the data correctly. Using a class structure that features inheritence.
 
 ### Screenshots:
