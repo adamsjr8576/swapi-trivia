@@ -7,12 +7,12 @@ import images from '../.././images/images.js';
 const Error = () => {
   return (
     <section className='section-error'>
-      <h3 className='header-error'>Error!!</h3>
       <div className='p-error-container'>
+        <h3 className='header-error'>Error!!</h3>
         <p className='p-error'>*All fields must be filled out to login*</p>
         <p className='p-error'>*Please return to login*</p>
+        <img className='gif-error' src={images.errorGif} alt='Gif of small bird scared' />
       </div>
-      <img className='gif-error' src={images.errorGif} alt='Gif of small bird scared' />
       <Link to='/' className='link-error'>
         <button className='button-error'>Back To Login</button>
       </Link>

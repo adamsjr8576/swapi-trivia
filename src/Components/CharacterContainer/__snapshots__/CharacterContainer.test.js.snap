@@ -15,11 +15,34 @@ exports[`CharacterContainer Should match the snapshot with all the proper data p
       Return to Movies
     </button>
   </Link>
-  <p
-    className="opening-crawl"
+  <section
+    className="starwars-scroll"
   >
-    the guardians of
-  </p>
+    <div
+      className="fade"
+    />
+    <div
+      className="scroll-window"
+    >
+      <div
+        className="scroll-content"
+      >
+        <p
+          className="title"
+        >
+          STAR WARS
+        </p>
+        <p
+          className="subtitle"
+        />
+      </div>
+      <p
+        className="scroll-p"
+      >
+        the guardians of
+      </p>
+    </div>
+  </section>
   <section
     className="section-character-container"
   >
