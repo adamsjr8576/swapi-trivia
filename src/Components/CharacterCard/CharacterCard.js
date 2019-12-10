@@ -16,17 +16,17 @@ const CharacterCard = ({ character, creature, name, openingCrawl, population, re
   return(
     <article className='character-card'>
       <header className='header-character'>
-        <h2>{character}</h2>
+        <h2 className='h2-character-header'>{character}</h2>
         <button className='button-favorites' onClick={ () => {handleFavorites(characterInfo)} }>
           <img className='favorites-img' src={images.heart} alt='heart icon for favorites' />
         </button>
       </header>
       <section className='section-character'>
-        <h2 className='h2-character'>{species}</h2>
-        <h2 className='h2-character'>{creature}</h2>
-        <h2 className='h2-character'>{name}</h2>
-        <h2 className='h2-character'>{population}</h2>
-        {films}
+        <h2 className='h2-character'>Species: {species}</h2>
+        <h2 className='h2-character'>Creature: {creature}</h2>
+        <h2 className='h2-character'>Name: {name}</h2>
+        <h2 className='h2-character-population'>Population: {population}</h2>
+        <h2 className='h2-films'>Films: {films}</h2>
       </section>
     </article>
   )
