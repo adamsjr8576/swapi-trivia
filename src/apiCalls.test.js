@@ -29,6 +29,15 @@ describe('getAllMovies', () => {
         ]
       }
     ];
+    let mockCleanedResponse = {
+      title: "A New Hope",
+      episode_id: 4,
+      release_date: "1977-05-25",
+      characters: [
+          "https://swapi.co/api/people/1/",
+          "https://swapi.co/api/people/2/"],
+      opening_crawl: 'It is a period of civi'
+    }
 
     beforeEach(() => {
 
@@ -49,7 +58,7 @@ describe('getAllMovies', () => {
     });
 
     it('Should return an array of movie information', () => {
-      expect(getAllMovies()).resolves.toEqual(mockResponse);
+      expect(getAllMovies()).resolves.toEqual(mockCleanedResponse);
     });
 
     it('Should return an error for a response that fails', () => {
