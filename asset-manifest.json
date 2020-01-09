@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/swapi-trivia/static/css/main.2acc37bf.chunk.css",
+    "main.js": "/swapi-trivia/static/js/main.2a50ab4d.chunk.js",
+    "main.js.map": "/swapi-trivia/static/js/main.2a50ab4d.chunk.js.map",
+    "runtime-main.js": "/swapi-trivia/static/js/runtime-main.39755281.js",
+    "runtime-main.js.map": "/swapi-trivia/static/js/runtime-main.39755281.js.map",
+    "static/js/2.9b0b2138.chunk.js": "/swapi-trivia/static/js/2.9b0b2138.chunk.js",
+    "static/js/2.9b0b2138.chunk.js.map": "/swapi-trivia/static/js/2.9b0b2138.chunk.js.map",
+    "index.html": "/swapi-trivia/index.html",
+    "precache-manifest.f786c84ee8e431d55277dd0bbe6a2b13.js": "/swapi-trivia/precache-manifest.f786c84ee8e431d55277dd0bbe6a2b13.js",
+    "service-worker.js": "/swapi-trivia/service-worker.js",
+    "static/css/main.2acc37bf.chunk.css.map": "/swapi-trivia/static/css/main.2acc37bf.chunk.css.map",
+    "static/media/Star-Wars-Episode-I-The-Phantom-Menace.jpg": "/swapi-trivia/static/media/Star-Wars-Episode-I-The-Phantom-Menace.1f1efd36.jpg",
+    "static/media/Star-Wars-Episode-II-Attack-Of-The-Clones.jpg": "/swapi-trivia/static/media/Star-Wars-Episode-II-Attack-Of-The-Clones.b5b36038.jpg",
+    "static/media/Star-Wars-Episode-III-Revenge-Of-The-Sith.jpg": "/swapi-trivia/static/media/Star-Wars-Episode-III-Revenge-Of-The-Sith.662d1546.jpg",
+    "static/media/Star-Wars-Episode-IV-A-New-Hope.jpg": "/swapi-trivia/static/media/Star-Wars-Episode-IV-A-New-Hope.853ec839.jpg",
+    "static/media/Star-Wars-Episode-V-The-Empire-Strikes-Back.jpg": "/swapi-trivia/static/media/Star-Wars-Episode-V-The-Empire-Strikes-Back.6376bec5.jpg",
+    "static/media/Star-Wars-Episode-VI-Return-Of-The-Jedi.jpg": "/swapi-trivia/static/media/Star-Wars-Episode-VI-Return-Of-The-Jedi.6c736061.jpg",
+    "static/media/Star-Wars-Episode-VII-The-Force-Awakens.jpg": "/swapi-trivia/static/media/Star-Wars-Episode-VII-The-Force-Awakens.b70db613.jpg",
+    "static/media/errorGif.gif": "/swapi-trivia/static/media/errorGif.53b02921.gif",
+    "static/media/falcon.png": "/swapi-trivia/static/media/falcon.6dc534bb.png",
+    "static/media/lover.png": "/swapi-trivia/static/media/lover.8dd36962.png",
+    "static/media/rider.gif": "/swapi-trivia/static/media/rider.5796f9fb.gif",
+    "static/media/starwarslogo.png": "/swapi-trivia/static/media/starwarslogo.e0118ff6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.39755281.js",
+    "static/js/2.9b0b2138.chunk.js",
+    "static/css/main.2acc37bf.chunk.css",
+    "static/js/main.2a50ab4d.chunk.js"
+  ]
+}
