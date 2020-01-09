@@ -26,3 +26,13 @@
 - Wins: We felt that we did a solid job of completing the above challenges first and foremost. Secondly to the API calls we were very proud of the styling for this application. We included the classic Star Wars text scroll and a few other micro-interactions to increase the UI/UX
 
 ### Screenshots:
+
+Login Screen:
+
+<img width="1430" alt="Screen Shot 2019-12-10 at 4 51 58 PM" src="https://user-images.githubusercontent.com/49846853/70579503-1459bf80-1b6e-11ea-8edb-1c0882384cc8.png">
+
+Movie Container:
+<img width="1430" alt="Screen Shot 2019-12-10 at 4 53 09 PM" src="https://user-images.githubusercontent.com/49846853/70579504-1459bf80-1b6e-11ea-9980-a1aa04272ea5.png">
+
+Character Container:
+![screencapture-localhost-3000-2019-12-10-16_50_22](https://user-images.githubusercontent.com/49846853/70579505-1459bf80-1b6e-11ea-887d-7df52f203895.png)
